@@ -1,0 +1,52 @@
+1.	package com.mpr;  
+2.	  
+3.	import java.io.IOException;   
+4.	import org.apache.hadoop.conf.Configuration;  
+5.	import org.apache.hadoop.fs.Path;  
+6.	import org.apache.hadoop.io.IntWritable;  
+7.	import org.apache.hadoop.io.LongWritable;  
+8.	import org.apache.hadoop.io.Text;  
+9.	import org.apache.hadoop.mapreduce.Job;  
+10.	import org.apache.hadoop.mapreduce.Mapper;  
+11.	import org.apache.hadoop.mapreduce.Reducer;  
+12.	import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;  
+13.	import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;  
+14.	  
+15.	public class Ipl1 {  
+16.	    public static class MyMapper extends Mapper<LongWritable, Text, Text,IntWritable> {    
+17.	        public void map(LongWritable key, Text value, Context context ) throws IOException, InterruptedException {  
+18.	            String MatchString = value.toString();  
+19.	                String[] MatchData = MatchString.split( "," );  
+20.	                String season_id =  MatchData[4] ;  
+21.	                context.write(new Text(season_id),new IntWritable(1));  
+22.	            }  
+23.	        }//end of MyMapper class  
+24.	      
+25.	    public static class MyReducer extends Reducer<Text, IntWritable, Text, IntWritable> {  
+26.	        private IntWritable result = new IntWritable();  
+27.	        public void reduce(Text key, Iterable<IntWritable> values, Context context ) throws IOException, InterruptedException {  
+28.	            int sum = 0;  
+29.	            for (IntWritable val : values) {  
+30.	                sum += val.get();  
+31.	            }  
+32.	            result.set(sum);  
+33.	            context.write(key, result);  
+34.	            }  
+35.	        }//end of MyReducer class  
+36.	      
+37.	    public static void main(String[] args) throws Exception {  
+38.	        Configuration conf = new Configuration();  
+39.	        Job job = new Job(conf, "Ipl1");  
+40.	        //Ignore the warning as new techniques for getting handle to Job is available now. 
+41.	        job.setJarByClass( Ipl1.class );  
+42.	        job.setMapperClass( MyMapper.class );  
+43.	        job.setCombinerClass(MyReducer.class);  
+44.	        job.setReducerClass( MyReducer.class );  
+45.	        job.setMapOutputKeyClass( Text.class );  
+46.	        job.setMapOutputValueClass( IntWritable.class );  
+47.	        job.setOutputKeyClass( Text.class );  
+48.	        job.setOutputValueClass( IntWritable.class );  
+49.	        FileInputFormat.addInputPath( job, new Path( args[0] ) );  
+50.	        FileOutputFormat.setOutputPath( job, new Path( args[1] ) );  
+51.	        System.exit( job.waitForCompletion( true ) ? 0 : 1 );  
+52.	        }  53.	}
