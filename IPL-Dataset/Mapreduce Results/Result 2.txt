@@ -1,11 +1,9 @@
 //2.	To determine number of matches played in a particular stadium.
 
-notroot@ubuntu:~/lab/programs$ hadoop jar Ipl2.jar com.mpr.Ipl2 /input/MatchNew
-/output/Ipl2
+notroot@ubuntu:~/lab/programs$ hadoop jar Ipl2.jar com.mpr.Ipl2 /input/MatchNew /output/Ipl2
 17/06/05 23:55:53 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
 17/06/05 23:55:54 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing
-not performed. Implement the Tool interface and execute your application with ToolRunner to
-remedy this.
+not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
 17/06/05 23:55:54 INFO input.FileInputFormat: Total input paths to process : 1
 17/06/05 23:55:54 INFO mapreduce.JobSubmitter: number of splits:1
 17/06/05 23:55:55 INFO mapreduce.JobSubmitter: Submitting tokens for job:
