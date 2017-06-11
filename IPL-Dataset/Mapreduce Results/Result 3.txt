@@ -1,8 +1,10 @@
-//3.To determine the decision on winning the toss and how many times batting and fielding were selected on winning toss from season1 to season 9.
+//3.To determine the decision on winning the toss and how many times batting and fielding were selected on winning toss 
+from season1 to season 9.
 
 notroot@ubuntu:~/lab/programs$ hadoop jar Ipl3.jar com.mpr.Ipl3 /input/MatchNew /output/Ipl3
 17/06/06 02:00:21 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
-17/06/06 02:00:22 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool interface and execute your application with ToolRunner to remedy this.
+17/06/06 02:00:22 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. 
+Implement the Tool interface and execute your application with ToolRunner to remedy this.
 17/06/06 02:00:23 INFO input.FileInputFormat: Total input paths to process : 1
 17/06/06 02:00:23 INFO mapreduce.JobSubmitter: number of splits:1
 17/06/06 02:00:23 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1496730421688_0004
