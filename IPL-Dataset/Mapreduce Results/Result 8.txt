@@ -1,0 +1,459 @@
+//8.To determine how many times a team has won toss & match at a particular stadium.
+
+notroot@ubuntu:~/lab/programs$ hadoop jar Ipl8.jar com.mpr.Ipl8 /input/MatchNew /output/Ipl8
+17/06/06 03:32:52 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+17/06/06 03:32:52 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool                                               interface and execute your application with ToolRunner to remedy this.
+17/06/06 03:32:53 INFO input.FileInputFormat: Total input paths to process : 1
+17/06/06 03:32:53 INFO mapreduce.JobSubmitter: number of splits:1
+17/06/06 03:32:53 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1496730421688_0010
+17/06/06 03:32:54 INFO impl.YarnClientImpl: Submitted application application_1496730421688_0010
+17/06/06 03:32:54 INFO mapreduce.Job: The url to track the job: http://ubuntu:8088/proxy/application_1496730421688_0010/
+17/06/06 03:32:54 INFO mapreduce.Job: Running job: job_1496730421688_0010
+17/06/06 03:33:05 INFO mapreduce.Job: Job job_1496730421688_0010 running in uber mode : false
+17/06/06 03:33:05 INFO mapreduce.Job:  map 0% reduce 0%
+17/06/06 03:33:20 INFO mapreduce.Job:  map 100% reduce 0%
+17/06/06 03:33:33 INFO mapreduce.Job:  map 100% reduce 100%
+17/06/06 03:33:34 INFO mapreduce.Job: Job job_1496730421688_0010 completed successfully
+17/06/06 03:33:35 INFO mapreduce.Job: Counters: 49
+        File System Counters
+                FILE: Number of bytes read=32153
+                FILE: Number of bytes written=299711
+                FILE: Number of read operations=0
+                FILE: Number of large read operations=0
+                FILE: Number of write operations=0
+                HDFS: Number of bytes read=59517
+                HDFS: Number of bytes written=30608
+                HDFS: Number of read operations=6
+                HDFS: Number of large read operations=0
+                HDFS: Number of write operations=2
+        Job Counters
+                Launched map tasks=1
+                Launched reduce tasks=1
+                Data-local map tasks=1
+                Total time spent by all maps in occupied slots (ms)=11414
+                Total time spent by all reduces in occupied slots (ms)=10814
+                Total time spent by all map tasks (ms)=11414
+                Total time spent by all reduce tasks (ms)=10814
+                Total vcore-milliseconds taken by all map tasks=11414
+                Total vcore-milliseconds taken by all reduce tasks=10814
+                Total megabyte-milliseconds taken by all map tasks=11687936
+                Total megabyte-milliseconds taken by all reduce tasks=11073536
+        Map-Reduce Framework
+                Map input records=577
+                Map output records=577
+                Map output bytes=46367
+                Map output materialized bytes=32153
+                Input split bytes=101
+                Combine input records=577
+                Combine output records=386
+                Reduce input groups=386
+                Reduce shuffle bytes=32153
+                Reduce input records=386
+                Reduce output records=386
+                Spilled Records=772
+                Shuffled Maps =1
+                Failed Shuffles=0
+                Merged Map outputs=1
+                GC time elapsed (ms)=257
+                CPU time spent (ms)=5160
+                Physical memory (bytes) snapshot=449368064
+                Virtual memory (bytes) snapshot=1682878464
+                Total committed heap usage (bytes)=308281344
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+        File Input Format Counters
+                Bytes Read=59416
+        File Output Format Counters
+                Bytes Written=30608
+notroot@ubuntu:~/lab/programs$ hdfs dfs -cat /output/Ipl8/part-r-00000
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:1        TossWinner:3    MatchWinner:1   No. of Times:   1
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:2        TossWinner:7    MatchWinner:2   No. of Times:   1
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:1    MatchWinner:3   No. of Times:   4
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:10   MatchWinner:10  No. of Times:   1
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:10   MatchWinner:3   No. of Times:   2
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:11   MatchWinner:3   No. of Times:   1
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:2    MatchWinner:2   No. of Times:   1
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:2    MatchWinner:3   No. of Times:   2
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:3    MatchWinner:1   No. of Times:   1
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:3    MatchWinner:3   No. of Times:   17
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:3    MatchWinner:4   No. of Times:   1
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:3    MatchWinner:6   No. of Times:   2
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:3    MatchWinner:7   No. of Times:   1
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:4    MatchWinner:3   No. of Times:   1
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:4    MatchWinner:4   No. of Times:   1
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:5    MatchWinner:3   No. of Times:   3
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:5    MatchWinner:5   No. of Times:   1
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:6    MatchWinner:3   No. of Times:   1
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:7    MatchWinner:3   No. of Times:   1
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:7    MatchWinner:7   No. of Times:   2
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:3        TossWinner:8    MatchWinner:8   No. of Times:   2
+"MA CHIDAMBARAM STADIUM CHEPAUK"        TeamId:6        TossWinner:6    MatchWinner:3   No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION IS BINDRA STADIUM MOHALI"   TeamId:4        TossWinner:1    MatchWinner:1   No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION IS BINDRA STADIUM MOHALI"   TeamId:4        TossWinner:12   MatchWinner:4   No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION IS BINDRA STADIUM MOHALI"   TeamId:4        TossWinner:13   MatchWinner:13  No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION IS BINDRA STADIUM MOHALI"   TeamId:4        TossWinner:4    MatchWinner:11  No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION IS BINDRA STADIUM MOHALI"   TeamId:4        TossWinner:4    MatchWinner:2   No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION IS BINDRA STADIUM MOHALI"   TeamId:4        TossWinner:4    MatchWinner:7   No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION IS BINDRA STADIUM MOHALI"   TeamId:4        TossWinner:6    MatchWinner:4   No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:1    MatchWinner:1   No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:1    MatchWinner:4   No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:2    MatchWinner:2   No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:2    MatchWinner:4   No. of Times:   2
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:3    MatchWinner:3   No. of Times:   2
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:4    MatchWinner:1   No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:4    MatchWinner:10  No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:4    MatchWinner:11  No. of Times:   2
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:4    MatchWinner:2   No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:4    MatchWinner:3   No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:4    MatchWinner:4   No. of Times:   7
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:4    MatchWinner:5   No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:4    MatchWinner:7   No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:5    MatchWinner:4   No. of Times:   3
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:5    MatchWinner:5   No. of Times:   2
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:6    MatchWinner:4   No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:6    MatchWinner:6   No. of Times:   1
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:7    MatchWinner:4   No. of Times:   3
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:7    MatchWinner:7   No. of Times:   2
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     TeamId:4        TossWinner:8    MatchWinner:4   No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:11       TossWinner:1    MatchWinner:11  No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:11       TossWinner:10   MatchWinner:11  No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:11       TossWinner:11   MatchWinner:1   No. of Times:   2
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:11       TossWinner:11   MatchWinner:11  No. of Times:   5
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:11       TossWinner:11   MatchWinner:2   No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:11       TossWinner:11   MatchWinner:3   No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:11       TossWinner:11   MatchWinner:7   No. of Times:   2
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:11       TossWinner:12   MatchWinner:12  No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:11       TossWinner:2    MatchWinner:11  No. of Times:   3
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:11       TossWinner:3    MatchWinner:11  No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:11       TossWinner:4    MatchWinner:11  No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:11       TossWinner:4    MatchWinner:4   No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:11       TossWinner:6    MatchWinner:11  No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:11       TossWinner:6    MatchWinner:6   No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:11       TossWinner:7    MatchWinner:11  No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:8        TossWinner:1    MatchWinner:1   No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:8        TossWinner:2    MatchWinner:8   No. of Times:   2
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:8        TossWinner:4    MatchWinner:4   No. of Times:   2
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:8        TossWinner:5    MatchWinner:5   No. of Times:   2
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:8        TossWinner:5    MatchWinner:8   No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:8        TossWinner:6    MatchWinner:6   No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:8        TossWinner:8    MatchWinner:1   No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:8        TossWinner:8    MatchWinner:10  No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:8        TossWinner:8    MatchWinner:2   No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:8        TossWinner:8    MatchWinner:3   No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:8        TossWinner:8    MatchWinner:4   No. of Times:   1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:8        TossWinner:8    MatchWinner:6   No. of Times:   2
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      TeamId:8        TossWinner:8    MatchWinner:7   No. of Times:   2
+"SARDAR PATEL STADIUM MOTERA"   TeamId:5        TossWinner:1    MatchWinner:5   No. of Times:   1
+"SARDAR PATEL STADIUM MOTERA"   TeamId:5        TossWinner:2    MatchWinner:2   No. of Times:   1
+"SARDAR PATEL STADIUM MOTERA"   TeamId:5        TossWinner:3    MatchWinner:5   No. of Times:   1
+"SARDAR PATEL STADIUM MOTERA"   TeamId:5        TossWinner:4    MatchWinner:4   No. of Times:   1
+"SARDAR PATEL STADIUM MOTERA"   TeamId:5        TossWinner:5    MatchWinner:11  No. of Times:   1
+"SARDAR PATEL STADIUM MOTERA"   TeamId:5        TossWinner:5    MatchWinner:5   No. of Times:   2
+"SARDAR PATEL STADIUM MOTERA"   TeamId:5        TossWinner:6    MatchWinner:5   No. of Times:   1
+"SARDAR PATEL STADIUM MOTERA"   TeamId:5        TossWinner:6    MatchWinner:6   No. of Times:   1
+"SARDAR PATEL STADIUM MOTERA"   TeamId:5        TossWinner:7    MatchWinner:5   No. of Times:   1
+"SARDAR PATEL STADIUM MOTERA"   TeamId:5        TossWinner:7    MatchWinner:7   No. of Times:   1
+"SARDAR PATEL STADIUM MOTERA"   TeamId:5        TossWinner:8    MatchWinner:5   No. of Times:   1
+"VIDARBHA CRICKET ASSOCIATION STADIUM JAMTHA"   TeamId:8        TossWinner:2    MatchWinner:8   No. of Times:   1
+"VIDARBHA CRICKET ASSOCIATION STADIUM JAMTHA"   TeamId:8        TossWinner:3    MatchWinner:8   No. of Times:   1
+"VIDARBHA CRICKET ASSOCIATION STADIUM JAMTHA"   TeamId:8        TossWinner:5    MatchWinner:5   No. of Times:   1
+BARABATI STADIUM        TeamId:1        TossWinner:1    MatchWinner:1   No. of Times:   1
+BARABATI STADIUM        TeamId:4        TossWinner:1    MatchWinner:1   No. of Times:   1
+BARABATI STADIUM        TeamId:4        TossWinner:3    MatchWinner:4   No. of Times:   1
+BARABATI STADIUM        TeamId:8        TossWinner:1    MatchWinner:1   No. of Times:   1
+BARABATI STADIUM        TeamId:8        TossWinner:4    MatchWinner:8   No. of Times:   1
+BARABATI STADIUM        TeamId:8        TossWinner:8    MatchWinner:8   No. of Times:   2
+BRABOURNE STADIUM       TeamId:3        TossWinner:3    MatchWinner:3   No. of Times:   1
+BRABOURNE STADIUM       TeamId:5        TossWinner:5    MatchWinner:11  No. of Times:   1
+BRABOURNE STADIUM       TeamId:5        TossWinner:5    MatchWinner:5   No. of Times:   1
+BRABOURNE STADIUM       TeamId:5        TossWinner:6    MatchWinner:5   No. of Times:   1
+BRABOURNE STADIUM       TeamId:7        TossWinner:1    MatchWinner:7   No. of Times:   1
+BRABOURNE STADIUM       TeamId:7        TossWinner:7    MatchWinner:2   No. of Times:   1
+BRABOURNE STADIUM       TeamId:7        TossWinner:7    MatchWinner:7   No. of Times:   5
+BUFFALO PARK    TeamId:1        TossWinner:7    MatchWinner:7   No. of Times:   1
+BUFFALO PARK    TeamId:3        TossWinner:3    MatchWinner:3   No. of Times:   1
+BUFFALO PARK    TeamId:6        TossWinner:7    MatchWinner:6   No. of Times:   1
+DE BEERS DIAMOND OVAL   TeamId:3        TossWinner:5    MatchWinner:3   No. of Times:   1
+DE BEERS DIAMOND OVAL   TeamId:8        TossWinner:4    MatchWinner:4   No. of Times:   1
+DE BEERS DIAMOND OVAL   TeamId:8        TossWinner:8    MatchWinner:8   No. of Times:   1
+DR DY PATIL SPORTS ACADEMY      TeamId:10       TossWinner:1    MatchWinner:1   No. of Times:   1
+DR DY PATIL SPORTS ACADEMY      TeamId:10       TossWinner:10   MatchWinner:3   No. of Times:   1
+DR DY PATIL SPORTS ACADEMY      TeamId:10       TossWinner:10   MatchWinner:7   No. of Times:   1
+DR DY PATIL SPORTS ACADEMY      TeamId:10       TossWinner:4    MatchWinner:10  No. of Times:   1
+DR DY PATIL SPORTS ACADEMY      TeamId:10       TossWinner:6    MatchWinner:6   No. of Times:   1
+DR DY PATIL SPORTS ACADEMY      TeamId:10       TossWinner:8    MatchWinner:8   No. of Times:   1
+DR DY PATIL SPORTS ACADEMY      TeamId:10       TossWinner:9    MatchWinner:10  No. of Times:   1
+DR DY PATIL SPORTS ACADEMY      TeamId:2        TossWinner:7    MatchWinner:7   No. of Times:   1
+DR DY PATIL SPORTS ACADEMY      TeamId:2        TossWinner:8    MatchWinner:2   No. of Times:   1
+DR DY PATIL SPORTS ACADEMY      TeamId:3        TossWinner:3    MatchWinner:3   No. of Times:   2
+DR DY PATIL SPORTS ACADEMY      TeamId:3        TossWinner:5    MatchWinner:5   No. of Times:   1
+DR DY PATIL SPORTS ACADEMY      TeamId:7        TossWinner:6    MatchWinner:7   No. of Times:   1
+DR DY PATIL SPORTS ACADEMY      TeamId:7        TossWinner:7    MatchWinner:7   No. of Times:   1
+DR DY PATIL SPORTS ACADEMY      TeamId:7        TossWinner:8    MatchWinner:8   No. of Times:   1
+DR DY PATIL SPORTS ACADEMY      TeamId:8        TossWinner:8    MatchWinner:1   No. of Times:   1
+DR DY PATIL SPORTS ACADEMY      TeamId:8        TossWinner:8    MatchWinner:7   No. of Times:   1
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     TeamId:11       TossWinner:1    MatchWinner:11  No. of Times:   1
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     TeamId:11       TossWinner:5    MatchWinner:5   No. of Times:   1
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     TeamId:11       TossWinner:6    MatchWinner:6   No. of Times:   1
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     TeamId:12       TossWinner:11   MatchWinner:11  No. of Times:   1
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     TeamId:12       TossWinner:12   MatchWinner:12  No. of Times:   1
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     TeamId:12       TossWinner:4    MatchWinner:12  No. of Times:   1
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     TeamId:7        TossWinner:6    MatchWinner:7   No. of Times:   1
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     TeamId:7        TossWinner:7    MatchWinner:11  No. of Times:   1
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     TeamId:7        TossWinner:7    MatchWinner:4   No. of Times:   1
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     TeamId:8        TossWinner:8    MatchWinner:3   No. of Times:   1
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     TeamId:8        TossWinner:8    MatchWinner:7   No. of Times:   1
+DUBAI INTERNATIONAL CRICKET STADIUM     TeamId:1        TossWinner:1    MatchWinner:6   No. of Times:   1
+DUBAI INTERNATIONAL CRICKET STADIUM     TeamId:11       TossWinner:11   MatchWinner:11  No. of Times:   1
+DUBAI INTERNATIONAL CRICKET STADIUM     TeamId:2        TossWinner:2    MatchWinner:2   No. of Times:   1
+DUBAI INTERNATIONAL CRICKET STADIUM     TeamId:3        TossWinner:7    MatchWinner:3   No. of Times:   1
+DUBAI INTERNATIONAL CRICKET STADIUM     TeamId:4        TossWinner:4    MatchWinner:4   No. of Times:   1
+DUBAI INTERNATIONAL CRICKET STADIUM     TeamId:5        TossWinner:5    MatchWinner:3   No. of Times:   1
+DUBAI INTERNATIONAL CRICKET STADIUM     TeamId:7        TossWinner:7    MatchWinner:11  No. of Times:   1
+EDEN GARDENS    TeamId:1        TossWinner:1    MatchWinner:1   No. of Times:   18
+EDEN GARDENS    TeamId:1        TossWinner:1    MatchWinner:3   No. of Times:   2
+EDEN GARDENS    TeamId:1        TossWinner:1    MatchWinner:4   No. of Times:   2
+EDEN GARDENS    TeamId:1        TossWinner:1    MatchWinner:7   No. of Times:   2
+EDEN GARDENS    TeamId:1        TossWinner:1    MatchWinner:9   No. of Times:   1
+EDEN GARDENS    TeamId:1        TossWinner:11   MatchWinner:1   No. of Times:   2
+EDEN GARDENS    TeamId:1        TossWinner:12   MatchWinner:1   No. of Times:   1
+EDEN GARDENS    TeamId:1        TossWinner:13   MatchWinner:13  No. of Times:   1
+EDEN GARDENS    TeamId:1        TossWinner:2    MatchWinner:1   No. of Times:   1
+EDEN GARDENS    TeamId:1        TossWinner:2    MatchWinner:2   No. of Times:   3
+EDEN GARDENS    TeamId:1        TossWinner:3    MatchWinner:1   No. of Times:   1
+EDEN GARDENS    TeamId:1        TossWinner:3    MatchWinner:3   No. of Times:   2
+EDEN GARDENS    TeamId:1        TossWinner:4    MatchWinner:1   No. of Times:   4
+EDEN GARDENS    TeamId:1        TossWinner:5    MatchWinner:1   No. of Times:   3
+EDEN GARDENS    TeamId:1        TossWinner:5    MatchWinner:5   No. of Times:   1
+EDEN GARDENS    TeamId:1        TossWinner:6    MatchWinner:6   No. of Times:   1
+EDEN GARDENS    TeamId:1        TossWinner:7    MatchWinner:1   No. of Times:   1
+EDEN GARDENS    TeamId:1        TossWinner:7    MatchWinner:7   No. of Times:   3
+EDEN GARDENS    TeamId:1        TossWinner:8    MatchWinner:1   No. of Times:   1
+EDEN GARDENS    TeamId:3        TossWinner:7    MatchWinner:7   No. of Times:   1
+EDEN GARDENS    TeamId:4        TossWinner:4    MatchWinner:1   No. of Times:   1
+EDEN GARDENS    TeamId:7        TossWinner:3    MatchWinner:7   No. of Times:   1
+EDEN GARDENS    TeamId:7        TossWinner:5    MatchWinner:7   No. of Times:   1
+FEROZ SHAH KOTLA        TeamId:11       TossWinner:1    MatchWinner:11  No. of Times:   1
+FEROZ SHAH KOTLA        TeamId:13       TossWinner:11   MatchWinner:11  No. of Times:   1
+FEROZ SHAH KOTLA        TeamId:3        TossWinner:3    MatchWinner:3   No. of Times:   1
+FEROZ SHAH KOTLA        TeamId:5        TossWinner:11   MatchWinner:5   No. of Times:   1
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:1    MatchWinner:1   No. of Times:   1
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:1    MatchWinner:6   No. of Times:   1
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:11   MatchWinner:11  No. of Times:   1
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:12   MatchWinner:12  No. of Times:   1
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:2    MatchWinner:2   No. of Times:   2
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:2    MatchWinner:6   No. of Times:   1
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:3    MatchWinner:3   No. of Times:   3
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:4    MatchWinner:4   No. of Times:   2
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:4    MatchWinner:6   No. of Times:   2
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:5    MatchWinner:5   No. of Times:   3
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:5    MatchWinner:6   No. of Times:   1
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:6    MatchWinner:    No. of Times:   1
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:6    MatchWinner:1   No. of Times:   3
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:6    MatchWinner:10  No. of Times:   1
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:6    MatchWinner:11  No. of Times:   1
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:6    MatchWinner:13  No. of Times:   1
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:6    MatchWinner:2   No. of Times:   2
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:6    MatchWinner:3   No. of Times:   1
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:6    MatchWinner:4   No. of Times:   2
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:6    MatchWinner:6   No. of Times:   8
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:6    MatchWinner:7   No. of Times:   2
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:7    MatchWinner:6   No. of Times:   4
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:8    MatchWinner:6   No. of Times:   2
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:8    MatchWinner:8   No. of Times:   2
+FEROZ SHAH KOTLA        TeamId:6        TossWinner:9    MatchWinner:9   No. of Times:   1
+GREEN PARK      TeamId:13       TossWinner:13   MatchWinner:13  No. of Times:   2
+HIMACHAL PRADESH CRICKET ASSOCIATION STADIUM    TeamId:4        TossWinner:3    MatchWinner:3   No. of Times:   1
+HIMACHAL PRADESH CRICKET ASSOCIATION STADIUM    TeamId:4        TossWinner:4    MatchWinner:4   No. of Times:   2
+HIMACHAL PRADESH CRICKET ASSOCIATION STADIUM    TeamId:4        TossWinner:4    MatchWinner:8   No. of Times:   1
+HIMACHAL PRADESH CRICKET ASSOCIATION STADIUM    TeamId:4        TossWinner:6    MatchWinner:4   No. of Times:   2
+HIMACHAL PRADESH CRICKET ASSOCIATION STADIUM    TeamId:4        TossWinner:6    MatchWinner:6   No. of Times:   1
+HIMACHAL PRADESH CRICKET ASSOCIATION STADIUM    TeamId:4        TossWinner:7    MatchWinner:4   No. of Times:   1
+HIMACHAL PRADESH CRICKET ASSOCIATION STADIUM    TeamId:4        TossWinner:8    MatchWinner:8   No. of Times:   1
+HOLKAR CRICKET STADIUM  TeamId:9        TossWinner:4    MatchWinner:4   No. of Times:   1
+HOLKAR CRICKET STADIUM  TeamId:9        TossWinner:9    MatchWinner:9   No. of Times:   1
+JSCA INTERNATIONAL STADIUM COMPLEX      TeamId:1        TossWinner:1    MatchWinner:1   No. of Times:   1
+JSCA INTERNATIONAL STADIUM COMPLEX      TeamId:1        TossWinner:1    MatchWinner:10  No. of Times:   1
+JSCA INTERNATIONAL STADIUM COMPLEX      TeamId:3        TossWinner:11   MatchWinner:11  No. of Times:   1
+JSCA INTERNATIONAL STADIUM COMPLEX      TeamId:3        TossWinner:3    MatchWinner:2   No. of Times:   1
+JSCA INTERNATIONAL STADIUM COMPLEX      TeamId:3        TossWinner:3    MatchWinner:3   No. of Times:   2
+JSCA INTERNATIONAL STADIUM COMPLEX      TeamId:3        TossWinner:5    MatchWinner:3   No. of Times:   1
+KINGSMEAD       TeamId:1        TossWinner:1    MatchWinner:1   No. of Times:   1
+KINGSMEAD       TeamId:2        TossWinner:1    MatchWinner:2   No. of Times:   1
+KINGSMEAD       TeamId:2        TossWinner:2    MatchWinner:2   No. of Times:   1
+KINGSMEAD       TeamId:2        TossWinner:2    MatchWinner:4   No. of Times:   1
+KINGSMEAD       TeamId:2        TossWinner:3    MatchWinner:2   No. of Times:   1
+KINGSMEAD       TeamId:3        TossWinner:3    MatchWinner:3   No. of Times:   1
+KINGSMEAD       TeamId:3        TossWinner:6    MatchWinner:6   No. of Times:   1
+KINGSMEAD       TeamId:3        TossWinner:8    MatchWinner:8   No. of Times:   1
+KINGSMEAD       TeamId:4        TossWinner:1    MatchWinner:1   No. of Times:   1
+KINGSMEAD       TeamId:4        TossWinner:4    MatchWinner:4   No. of Times:   1
+KINGSMEAD       TeamId:4        TossWinner:4    MatchWinner:5   No. of Times:   1
+KINGSMEAD       TeamId:6        TossWinner:1    MatchWinner:6   No. of Times:   1
+KINGSMEAD       TeamId:7        TossWinner:5    MatchWinner:5   No. of Times:   1
+KINGSMEAD       TeamId:8        TossWinner:8    MatchWinner:6   No. of Times:   1
+KINGSMEAD       TeamId:8        TossWinner:8    MatchWinner:8   No. of Times:   1
+M CHINNASWAMY STADIUM   TeamId:1        TossWinner:1    MatchWinner:1   No. of Times:   1
+M CHINNASWAMY STADIUM   TeamId:13       TossWinner:2    MatchWinner:2   No. of Times:   1
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:1    MatchWinner:1   No. of Times:   1
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:10   MatchWinner:2   No. of Times:   3
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:11   MatchWinner:11  No. of Times:   2
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:11   MatchWinner:2   No. of Times:   2
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:13   MatchWinner:2   No. of Times:   1
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:2    MatchWinner:    No. of Times:   1
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:2    MatchWinner:1   No. of Times:   2
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:2    MatchWinner:2   No. of Times:   11
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:2    MatchWinner:3   No. of Times:   1
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:2    MatchWinner:4   No. of Times:   1
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:2    MatchWinner:5   No. of Times:   1
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:2    MatchWinner:6   No. of Times:   1
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:2    MatchWinner:7   No. of Times:   2
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:3    MatchWinner:2   No. of Times:   2
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:3    MatchWinner:3   No. of Times:   2
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:4    MatchWinner:2   No. of Times:   4
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:4    MatchWinner:4   No. of Times:   3
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:5    MatchWinner:    No. of Times:   1
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:5    MatchWinner:5   No. of Times:   2
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:6    MatchWinner:2   No. of Times:   2
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:6    MatchWinner:6   No. of Times:   2
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:7    MatchWinner:2   No. of Times:   1
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:7    MatchWinner:7   No. of Times:   4
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:8    MatchWinner:2   No. of Times:   1
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:8    MatchWinner:8   No. of Times:   1
+M CHINNASWAMY STADIUM   TeamId:2        TossWinner:9    MatchWinner:2   No. of Times:   1
+M CHINNASWAMY STADIUM   TeamId:3        TossWinner:7    MatchWinner:3   No. of Times:   1
+MAHARASHTRA CRICKET ASSOCIATION STADIUM TeamId:12       TossWinner:1    MatchWinner:1   No. of Times:   1
+MAHARASHTRA CRICKET ASSOCIATION STADIUM TeamId:12       TossWinner:12   MatchWinner:2   No. of Times:   1
+MAHARASHTRA CRICKET ASSOCIATION STADIUM TeamId:12       TossWinner:13   MatchWinner:13  No. of Times:   1
+MAHARASHTRA CRICKET ASSOCIATION STADIUM TeamId:12       TossWinner:7    MatchWinner:7   No. of Times:   1
+MAHARASHTRA CRICKET ASSOCIATION STADIUM TeamId:2        TossWinner:2    MatchWinner:2   No. of Times:   1
+MAHARASHTRA CRICKET ASSOCIATION STADIUM TeamId:4        TossWinner:1    MatchWinner:1   No. of Times:   1
+MAHARASHTRA CRICKET ASSOCIATION STADIUM TeamId:4        TossWinner:4    MatchWinner:5   No. of Times:   1
+MAHARASHTRA CRICKET ASSOCIATION STADIUM TeamId:4        TossWinner:4    MatchWinner:6   No. of Times:   1
+NEHRU STADIUM   TeamId:9        TossWinner:1    MatchWinner:9   No. of Times:   1
+NEHRU STADIUM   TeamId:9        TossWinner:6    MatchWinner:6   No. of Times:   1
+NEHRU STADIUM   TeamId:9        TossWinner:9    MatchWinner:2   No. of Times:   1
+NEHRU STADIUM   TeamId:9        TossWinner:9    MatchWinner:8   No. of Times:   1
+NEHRU STADIUM   TeamId:9        TossWinner:9    MatchWinner:9   No. of Times:   1
+NEW WANDERERS STADIUM   TeamId:2        TossWinner:2    MatchWinner:2   No. of Times:   1
+NEW WANDERERS STADIUM   TeamId:2        TossWinner:2    MatchWinner:8   No. of Times:   1
+NEW WANDERERS STADIUM   TeamId:2        TossWinner:6    MatchWinner:2   No. of Times:   1
+NEW WANDERERS STADIUM   TeamId:2        TossWinner:7    MatchWinner:2   No. of Times:   1
+NEW WANDERERS STADIUM   TeamId:3        TossWinner:6    MatchWinner:3   No. of Times:   1
+NEW WANDERERS STADIUM   TeamId:6        TossWinner:6    MatchWinner:6   No. of Times:   1
+NEW WANDERERS STADIUM   TeamId:8        TossWinner:8    MatchWinner:4   No. of Times:   1
+NEW WANDERERS STADIUM   TeamId:8        TossWinner:8    MatchWinner:8   No. of Times:   1
+NEWLANDS        TeamId:1        TossWinner:1    MatchWinner:5   No. of Times:   1
+NEWLANDS        TeamId:2        TossWinner:2    MatchWinner:2   No. of Times:   1
+NEWLANDS        TeamId:2        TossWinner:8    MatchWinner:8   No. of Times:   1
+NEWLANDS        TeamId:3        TossWinner:3    MatchWinner:7   No. of Times:   1
+NEWLANDS        TeamId:4        TossWinner:4    MatchWinner:4   No. of Times:   1
+NEWLANDS        TeamId:6        TossWinner:6    MatchWinner:6   No. of Times:   1
+NEWLANDS        TeamId:8        TossWinner:1    MatchWinner:8   No. of Times:   1
+OUTSURANCE OVAL TeamId:6        TossWinner:4    MatchWinner:4   No. of Times:   1
+OUTSURANCE OVAL TeamId:6        TossWinner:6    MatchWinner:6   No. of Times:   1
+SAURASHTRA CRICKET ASSOCIATION STADIUM  TeamId:13       TossWinner:11   MatchWinner:11  No. of Times:   1
+SAURASHTRA CRICKET ASSOCIATION STADIUM  TeamId:13       TossWinner:12   MatchWinner:13  No. of Times:   1
+SAURASHTRA CRICKET ASSOCIATION STADIUM  TeamId:13       TossWinner:13   MatchWinner:4   No. of Times:   1
+SAURASHTRA CRICKET ASSOCIATION STADIUM  TeamId:13       TossWinner:2    MatchWinner:13  No. of Times:   1
+SAURASHTRA CRICKET ASSOCIATION STADIUM  TeamId:13       TossWinner:6    MatchWinner:6   No. of Times:   1
+SAWAI MANSINGH STADIUM  TeamId:5        TossWinner:1    MatchWinner:1   No. of Times:   1
+SAWAI MANSINGH STADIUM  TeamId:5        TossWinner:1    MatchWinner:5   No. of Times:   2
+SAWAI MANSINGH STADIUM  TeamId:5        TossWinner:10   MatchWinner:5   No. of Times:   1
+SAWAI MANSINGH STADIUM  TeamId:5        TossWinner:11   MatchWinner:5   No. of Times:   1
+SAWAI MANSINGH STADIUM  TeamId:5        TossWinner:2    MatchWinner:2   No. of Times:   1
+SAWAI MANSINGH STADIUM  TeamId:5        TossWinner:2    MatchWinner:5   No. of Times:   1
+SAWAI MANSINGH STADIUM  TeamId:5        TossWinner:3    MatchWinner:3   No. of Times:   1
+SAWAI MANSINGH STADIUM  TeamId:5        TossWinner:3    MatchWinner:5   No. of Times:   1
+SAWAI MANSINGH STADIUM  TeamId:5        TossWinner:4    MatchWinner:5   No. of Times:   3
+SAWAI MANSINGH STADIUM  TeamId:5        TossWinner:5    MatchWinner:2   No. of Times:   2
+SAWAI MANSINGH STADIUM  TeamId:5        TossWinner:5    MatchWinner:3   No. of Times:   1
+SAWAI MANSINGH STADIUM  TeamId:5        TossWinner:5    MatchWinner:5   No. of Times:   12
+SAWAI MANSINGH STADIUM  TeamId:5        TossWinner:5    MatchWinner:6   No. of Times:   1
+SAWAI MANSINGH STADIUM  TeamId:5        TossWinner:5    MatchWinner:7   No. of Times:   2
+SAWAI MANSINGH STADIUM  TeamId:5        TossWinner:6    MatchWinner:5   No. of Times:   2
+SAWAI MANSINGH STADIUM  TeamId:5        TossWinner:8    MatchWinner:5   No. of Times:   1
+SHAHEED VEER NARAYAN SINGH INTERNATIONAL STADIUM        TeamId:6        TossWinner:1    MatchWinner:6   No. of Times:   1
+SHAHEED VEER NARAYAN SINGH INTERNATIONAL STADIUM        TeamId:6        TossWinner:10   MatchWinner:6   No. of Times:   1
+SHAHEED VEER NARAYAN SINGH INTERNATIONAL STADIUM        TeamId:6        TossWinner:11   MatchWinner:11  No. of Times:   1
+SHAHEED VEER NARAYAN SINGH INTERNATIONAL STADIUM        TeamId:6        TossWinner:2    MatchWinner:2   No. of Times:   1
+SHAHEED VEER NARAYAN SINGH INTERNATIONAL STADIUM        TeamId:6        TossWinner:3    MatchWinner:6   No. of Times:   1
+SHAHEED VEER NARAYAN SINGH INTERNATIONAL STADIUM        TeamId:6        TossWinner:6    MatchWinner:6   No. of Times:   1
+SHARJAH CRICKET STADIUM TeamId:11       TossWinner:11   MatchWinner:3   No. of Times:   1
+SHARJAH CRICKET STADIUM TeamId:2        TossWinner:2    MatchWinner:1   No. of Times:   1
+SHARJAH CRICKET STADIUM TeamId:4        TossWinner:11   MatchWinner:4   No. of Times:   1
+SHARJAH CRICKET STADIUM TeamId:5        TossWinner:4    MatchWinner:4   No. of Times:   1
+SHARJAH CRICKET STADIUM TeamId:6        TossWinner:2    MatchWinner:2   No. of Times:   1
+SHARJAH CRICKET STADIUM TeamId:6        TossWinner:7    MatchWinner:6   No. of Times:   1
+SHEIKH ZAYED STADIUM    TeamId:1        TossWinner:1    MatchWinner:4   No. of Times:   1
+SHEIKH ZAYED STADIUM    TeamId:1        TossWinner:5    MatchWinner:5   No. of Times:   1
+SHEIKH ZAYED STADIUM    TeamId:11       TossWinner:5    MatchWinner:5   No. of Times:   1
+SHEIKH ZAYED STADIUM    TeamId:3        TossWinner:3    MatchWinner:3   No. of Times:   1
+SHEIKH ZAYED STADIUM    TeamId:3        TossWinner:3    MatchWinner:4   No. of Times:   1
+SHEIKH ZAYED STADIUM    TeamId:5        TossWinner:5    MatchWinner:5   No. of Times:   1
+SHEIKH ZAYED STADIUM    TeamId:7        TossWinner:1    MatchWinner:1   No. of Times:   1
+ST GEORGE'S PARK        TeamId:1        TossWinner:7    MatchWinner:7   No. of Times:   1
+ST GEORGE'S PARK        TeamId:2        TossWinner:2    MatchWinner:6   No. of Times:   1
+ST GEORGE'S PARK        TeamId:2        TossWinner:3    MatchWinner:3   No. of Times:   1
+ST GEORGE'S PARK        TeamId:2        TossWinner:7    MatchWinner:7   No. of Times:   1
+ST GEORGE'S PARK        TeamId:3        TossWinner:7    MatchWinner:3   No. of Times:   1
+ST GEORGE'S PARK        TeamId:4        TossWinner:1    MatchWinner:4   No. of Times:   1
+ST GEORGE'S PARK        TeamId:8        TossWinner:8    MatchWinner:5   No. of Times:   1
+SUBRATA ROY SAHARA STADIUM      TeamId:10       TossWinner:1    MatchWinner:1   No. of Times:   2
+SUBRATA ROY SAHARA STADIUM      TeamId:10       TossWinner:10   MatchWinner:10  No. of Times:   2
+SUBRATA ROY SAHARA STADIUM      TeamId:10       TossWinner:10   MatchWinner:11  No. of Times:   1
+SUBRATA ROY SAHARA STADIUM      TeamId:10       TossWinner:10   MatchWinner:2   No. of Times:   1
+SUBRATA ROY SAHARA STADIUM      TeamId:10       TossWinner:10   MatchWinner:4   No. of Times:   1
+SUBRATA ROY SAHARA STADIUM      TeamId:10       TossWinner:10   MatchWinner:5   No. of Times:   1
+SUBRATA ROY SAHARA STADIUM      TeamId:10       TossWinner:10   MatchWinner:6   No. of Times:   1
+SUBRATA ROY SAHARA STADIUM      TeamId:10       TossWinner:10   MatchWinner:7   No. of Times:   1
+SUBRATA ROY SAHARA STADIUM      TeamId:10       TossWinner:2    MatchWinner:2   No. of Times:   1
+SUBRATA ROY SAHARA STADIUM      TeamId:10       TossWinner:3    MatchWinner:10  No. of Times:   1
+SUBRATA ROY SAHARA STADIUM      TeamId:10       TossWinner:3    MatchWinner:3   No. of Times:   1
+SUBRATA ROY SAHARA STADIUM      TeamId:10       TossWinner:5    MatchWinner:10  No. of Times:   1
+SUBRATA ROY SAHARA STADIUM      TeamId:10       TossWinner:7    MatchWinner:7   No. of Times:   1
+SUBRATA ROY SAHARA STADIUM      TeamId:10       TossWinner:8    MatchWinner:8   No. of Times:   1
+SUBRATA ROY SAHARA STADIUM      TeamId:6        TossWinner:1    MatchWinner:1   No. of Times:   1
+SUPERSPORT PARK TeamId:2        TossWinner:2    MatchWinner:2   No. of Times:   2
+SUPERSPORT PARK TeamId:2        TossWinner:5    MatchWinner:5   No. of Times:   1
+SUPERSPORT PARK TeamId:3        TossWinner:3    MatchWinner:1   No. of Times:   1
+SUPERSPORT PARK TeamId:3        TossWinner:3    MatchWinner:3   No. of Times:   1
+SUPERSPORT PARK TeamId:3        TossWinner:5    MatchWinner:3   No. of Times:   1
+SUPERSPORT PARK TeamId:4        TossWinner:4    MatchWinner:7   No. of Times:   1
+SUPERSPORT PARK TeamId:6        TossWinner:6    MatchWinner:5   No. of Times:   1
+SUPERSPORT PARK TeamId:6        TossWinner:6    MatchWinner:6   No. of Times:   1
+SUPERSPORT PARK TeamId:6        TossWinner:8    MatchWinner:8   No. of Times:   1
+SUPERSPORT PARK TeamId:8        TossWinner:6    MatchWinner:6   No. of Times:   1
+SUPERSPORT PARK TeamId:8        TossWinner:8    MatchWinner:8   No. of Times:   1
+WANKHEDE STADIUM        TeamId:2        TossWinner:3    MatchWinner:3   No. of Times:   1
+WANKHEDE STADIUM        TeamId:3        TossWinner:3    MatchWinner:4   No. of Times:   1
+WANKHEDE STADIUM        TeamId:3        TossWinner:4    MatchWinner:3   No. of Times:   1
+WANKHEDE STADIUM        TeamId:3        TossWinner:7    MatchWinner:7   No. of Times:   1
+WANKHEDE STADIUM        TeamId:6        TossWinner:6    MatchWinner:5   No. of Times:   1
+WANKHEDE STADIUM        TeamId:7        TossWinner:1    MatchWinner:7   No. of Times:   1
+WANKHEDE STADIUM        TeamId:7        TossWinner:10   MatchWinner:7   No. of Times:   1
+WANKHEDE STADIUM        TeamId:7        TossWinner:11   MatchWinner:7   No. of Times:   1
+WANKHEDE STADIUM        TeamId:7        TossWinner:13   MatchWinner:13  No. of Times:   1
+WANKHEDE STADIUM        TeamId:7        TossWinner:2    MatchWinner:2   No. of Times:   2
+WANKHEDE STADIUM        TeamId:7        TossWinner:2    MatchWinner:7   No. of Times:   1
+WANKHEDE STADIUM        TeamId:7        TossWinner:3    MatchWinner:3   No. of Times:   1
+WANKHEDE STADIUM        TeamId:7        TossWinner:3    MatchWinner:7   No. of Times:   1
+WANKHEDE STADIUM        TeamId:7        TossWinner:4    MatchWinner:7   No. of Times:   2
+WANKHEDE STADIUM        TeamId:7        TossWinner:5    MatchWinner:7   No. of Times:   3
+WANKHEDE STADIUM        TeamId:7        TossWinner:6    MatchWinner:6   No. of Times:   1
+WANKHEDE STADIUM        TeamId:7        TossWinner:6    MatchWinner:7   No. of Times:   3
+WANKHEDE STADIUM        TeamId:7        TossWinner:7    MatchWinner:1   No. of Times:   1
+WANKHEDE STADIUM        TeamId:7        TossWinner:7    MatchWinner:10  No. of Times:   1
+WANKHEDE STADIUM        TeamId:7        TossWinner:7    MatchWinner:12  No. of Times:   1
+WANKHEDE STADIUM        TeamId:7        TossWinner:7    MatchWinner:2   No. of Times:   1
+WANKHEDE STADIUM        TeamId:7        TossWinner:7    MatchWinner:3   No. of Times:   1
+WANKHEDE STADIUM        TeamId:7        TossWinner:7    MatchWinner:4   No. of Times:   3
+WANKHEDE STADIUM        TeamId:7        TossWinner:7    MatchWinner:5   No. of Times:   1
+WANKHEDE STADIUM        TeamId:7        TossWinner:7    MatchWinner:7   No. of Times:   15
+WANKHEDE STADIUM        TeamId:7        TossWinner:8    MatchWinner:8   No. of Times:   1
+WANKHEDE STADIUM        TeamId:7        TossWinner:9    MatchWinner:9   No. of Times:   1

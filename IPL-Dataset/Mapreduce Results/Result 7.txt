@@ -1,0 +1,281 @@
+//7.To determine total number of matches won by every team.
+
+notroot@ubuntu:~/lab/programs$ hadoop jar Ipl7.jar com.mpr.Ipl7 /input/MatchNew /output/Ipl7
+17/06/06 03:16:07 INFO client.RMProxy: Connecting to ResourceManager at /0.0.0.0:8032
+17/06/06 03:16:08 WARN mapreduce.JobResourceUploader: Hadoop command-line option parsing not performed. Implement the Tool                                               interface and execute your application with ToolRunner to remedy this.
+17/06/06 03:16:08 INFO input.FileInputFormat: Total input paths to process : 1
+17/06/06 03:16:08 INFO mapreduce.JobSubmitter: number of splits:1
+17/06/06 03:16:09 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_1496730421688_0009
+17/06/06 03:16:09 INFO impl.YarnClientImpl: Submitted application application_1496730421688_0009
+17/06/06 03:16:09 INFO mapreduce.Job: The url to track the job: http://ubuntu:8088/proxy/application_1496730421688_0009/
+17/06/06 03:16:09 INFO mapreduce.Job: Running job: job_1496730421688_0009
+17/06/06 03:16:28 INFO mapreduce.Job: Job job_1496730421688_0009 running in uber mode : false
+17/06/06 03:16:28 INFO mapreduce.Job:  map 0% reduce 0%
+17/06/06 03:16:38 INFO mapreduce.Job:  map 100% reduce 0%
+17/06/06 03:16:48 INFO mapreduce.Job:  map 100% reduce 100%
+17/06/06 03:16:51 INFO mapreduce.Job: Job job_1496730421688_0009 completed successfully
+17/06/06 03:16:51 INFO mapreduce.Job: Counters: 49
+        File System Counters
+                FILE: Number of bytes read=13157
+                FILE: Number of bytes written=261719
+                FILE: Number of read operations=0
+                FILE: Number of large read operations=0
+                FILE: Number of write operations=0
+                HDFS: Number of bytes read=59517
+                HDFS: Number of bytes written=12327
+                HDFS: Number of read operations=6
+                HDFS: Number of large read operations=0
+                HDFS: Number of write operations=2
+        Job Counters
+                Launched map tasks=1
+                Launched reduce tasks=1
+                Data-local map tasks=1
+                Total time spent by all maps in occupied slots (ms)=7711
+                Total time spent by all reduces in occupied slots (ms)=8152
+                Total time spent by all map tasks (ms)=7711
+                Total time spent by all reduce tasks (ms)=8152
+                Total vcore-milliseconds taken by all map tasks=7711
+                Total vcore-milliseconds taken by all reduce tasks=8152
+                Total megabyte-milliseconds taken by all map tasks=7896064
+                Total megabyte-milliseconds taken by all reduce tasks=8347648
+        Map-Reduce Framework
+                Map input records=577
+                Map output records=577
+                Map output bytes=34693
+                Map output materialized bytes=13157
+                Input split bytes=101
+                Combine input records=577
+                Combine output records=208
+                Reduce input groups=208
+                Reduce shuffle bytes=13157
+                Reduce input records=208
+                Reduce output records=208
+                Spilled Records=416
+                Shuffled Maps =1
+                Failed Shuffles=0
+                Merged Map outputs=1
+                GC time elapsed (ms)=187
+                CPU time spent (ms)=4460
+                Physical memory (bytes) snapshot=457793536
+                Virtual memory (bytes) snapshot=1668685824
+                Total committed heap usage (bytes)=314048512
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+        File Input Format Counters
+                Bytes Read=59416
+        File Output Format Counters
+                Bytes Written=12327
+notroot@ubuntu:~/lab/programs$ hdfs dfs -cat /output/Ipl7/part-r-00000
+"MA CHIDAMBARAM STADIUM CHEPAUK"        Team Id:1       No. of Matches Won:     2
+"MA CHIDAMBARAM STADIUM CHEPAUK"        Team Id:10      No. of Matches Won:     1
+"MA CHIDAMBARAM STADIUM CHEPAUK"        Team Id:2       No. of Matches Won:     2
+"MA CHIDAMBARAM STADIUM CHEPAUK"        Team Id:3       No. of Matches Won:     33
+"MA CHIDAMBARAM STADIUM CHEPAUK"        Team Id:4       No. of Matches Won:     2
+"MA CHIDAMBARAM STADIUM CHEPAUK"        Team Id:5       No. of Matches Won:     1
+"MA CHIDAMBARAM STADIUM CHEPAUK"        Team Id:6       No. of Matches Won:     2
+"MA CHIDAMBARAM STADIUM CHEPAUK"        Team Id:7       No. of Matches Won:     3
+"MA CHIDAMBARAM STADIUM CHEPAUK"        Team Id:8       No. of Matches Won:     2
+"PUNJAB CRICKET ASSOCIATION IS BINDRA STADIUM MOHALI"   Team Id:1       No. of Matches Won:     1
+"PUNJAB CRICKET ASSOCIATION IS BINDRA STADIUM MOHALI"   Team Id:11      No. of Matches Won:     1
+"PUNJAB CRICKET ASSOCIATION IS BINDRA STADIUM MOHALI"   Team Id:13      No. of Matches Won:     1
+"PUNJAB CRICKET ASSOCIATION IS BINDRA STADIUM MOHALI"   Team Id:2       No. of Matches Won:     1
+"PUNJAB CRICKET ASSOCIATION IS BINDRA STADIUM MOHALI"   Team Id:4       No. of Matches Won:     2
+"PUNJAB CRICKET ASSOCIATION IS BINDRA STADIUM MOHALI"   Team Id:7       No. of Matches Won:     1
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     Team Id:1       No. of Matches Won:     2
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     Team Id:10      No. of Matches Won:     1
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     Team Id:11      No. of Matches Won:     2
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     Team Id:2       No. of Matches Won:     2
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     Team Id:3       No. of Matches Won:     3
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     Team Id:4       No. of Matches Won:     18
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     Team Id:5       No. of Matches Won:     3
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     Team Id:6       No. of Matches Won:     1
+"PUNJAB CRICKET ASSOCIATION STADIUM MOHALI"     Team Id:7       No. of Matches Won:     3
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      Team Id:1       No. of Matches Won:     4
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      Team Id:10      No. of Matches Won:     1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      Team Id:11      No. of Matches Won:     14
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      Team Id:12      No. of Matches Won:     1
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      Team Id:2       No. of Matches Won:     2
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      Team Id:3       No. of Matches Won:     2
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      Team Id:4       No. of Matches Won:     4
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      Team Id:5       No. of Matches Won:     2
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      Team Id:6       No. of Matches Won:     4
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      Team Id:7       No. of Matches Won:     4
+"RAJIV GANDHI INTERNATIONAL STADIUM UPPAL"      Team Id:8       No. of Matches Won:     3
+"SARDAR PATEL STADIUM MOTERA"   Team Id:11      No. of Matches Won:     1
+"SARDAR PATEL STADIUM MOTERA"   Team Id:2       No. of Matches Won:     1
+"SARDAR PATEL STADIUM MOTERA"   Team Id:4       No. of Matches Won:     1
+"SARDAR PATEL STADIUM MOTERA"   Team Id:5       No. of Matches Won:     7
+"SARDAR PATEL STADIUM MOTERA"   Team Id:6       No. of Matches Won:     1
+"SARDAR PATEL STADIUM MOTERA"   Team Id:7       No. of Matches Won:     1
+"VIDARBHA CRICKET ASSOCIATION STADIUM JAMTHA"   Team Id:5       No. of Matches Won:     1
+"VIDARBHA CRICKET ASSOCIATION STADIUM JAMTHA"   Team Id:8       No. of Matches Won:     2
+BARABATI STADIUM        Team Id:1       No. of Matches Won:     3
+BARABATI STADIUM        Team Id:4       No. of Matches Won:     1
+BARABATI STADIUM        Team Id:8       No. of Matches Won:     3
+BRABOURNE STADIUM       Team Id:11      No. of Matches Won:     1
+BRABOURNE STADIUM       Team Id:2       No. of Matches Won:     1
+BRABOURNE STADIUM       Team Id:3       No. of Matches Won:     1
+BRABOURNE STADIUM       Team Id:5       No. of Matches Won:     2
+BRABOURNE STADIUM       Team Id:7       No. of Matches Won:     6
+BUFFALO PARK    Team Id:3       No. of Matches Won:     1
+BUFFALO PARK    Team Id:6       No. of Matches Won:     1
+BUFFALO PARK    Team Id:7       No. of Matches Won:     1
+DE BEERS DIAMOND OVAL   Team Id:3       No. of Matches Won:     1
+DE BEERS DIAMOND OVAL   Team Id:4       No. of Matches Won:     1
+DE BEERS DIAMOND OVAL   Team Id:8       No. of Matches Won:     1
+DR DY PATIL SPORTS ACADEMY      Team Id:1       No. of Matches Won:     2
+DR DY PATIL SPORTS ACADEMY      Team Id:10      No. of Matches Won:     2
+DR DY PATIL SPORTS ACADEMY      Team Id:2       No. of Matches Won:     1
+DR DY PATIL SPORTS ACADEMY      Team Id:3       No. of Matches Won:     3
+DR DY PATIL SPORTS ACADEMY      Team Id:5       No. of Matches Won:     1
+DR DY PATIL SPORTS ACADEMY      Team Id:6       No. of Matches Won:     1
+DR DY PATIL SPORTS ACADEMY      Team Id:7       No. of Matches Won:     5
+DR DY PATIL SPORTS ACADEMY      Team Id:8       No. of Matches Won:     2
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     Team Id:11      No. of Matches Won:     3
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     Team Id:12      No. of Matches Won:     2
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     Team Id:3       No. of Matches Won:     1
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     Team Id:4       No. of Matches Won:     1
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     Team Id:5       No. of Matches Won:     1
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     Team Id:6       No. of Matches Won:     1
+DR. Y.S. RAJASEKHARA REDDY ACA-VDCA CRICKET STADIUM     Team Id:7       No. of Matches Won:     2
+DUBAI INTERNATIONAL CRICKET STADIUM     Team Id:11      No. of Matches Won:     2
+DUBAI INTERNATIONAL CRICKET STADIUM     Team Id:2       No. of Matches Won:     1
+DUBAI INTERNATIONAL CRICKET STADIUM     Team Id:3       No. of Matches Won:     2
+DUBAI INTERNATIONAL CRICKET STADIUM     Team Id:4       No. of Matches Won:     1
+DUBAI INTERNATIONAL CRICKET STADIUM     Team Id:6       No. of Matches Won:     1
+EDEN GARDENS    Team Id:1       No. of Matches Won:     33
+EDEN GARDENS    Team Id:13      No. of Matches Won:     1
+EDEN GARDENS    Team Id:2       No. of Matches Won:     3
+EDEN GARDENS    Team Id:3       No. of Matches Won:     4
+EDEN GARDENS    Team Id:4       No. of Matches Won:     2
+EDEN GARDENS    Team Id:5       No. of Matches Won:     1
+EDEN GARDENS    Team Id:6       No. of Matches Won:     1
+EDEN GARDENS    Team Id:7       No. of Matches Won:     8
+EDEN GARDENS    Team Id:9       No. of Matches Won:     1
+FEROZ SHAH KOTLA        Team Id:        No. of Matches Won:     1
+FEROZ SHAH KOTLA        Team Id:1       No. of Matches Won:     4
+FEROZ SHAH KOTLA        Team Id:10      No. of Matches Won:     1
+FEROZ SHAH KOTLA        Team Id:11      No. of Matches Won:     4
+FEROZ SHAH KOTLA        Team Id:12      No. of Matches Won:     1
+FEROZ SHAH KOTLA        Team Id:13      No. of Matches Won:     1
+FEROZ SHAH KOTLA        Team Id:2       No. of Matches Won:     4
+FEROZ SHAH KOTLA        Team Id:3       No. of Matches Won:     5
+FEROZ SHAH KOTLA        Team Id:4       No. of Matches Won:     4
+FEROZ SHAH KOTLA        Team Id:5       No. of Matches Won:     4
+FEROZ SHAH KOTLA        Team Id:6       No. of Matches Won:     19
+FEROZ SHAH KOTLA        Team Id:7       No. of Matches Won:     2
+FEROZ SHAH KOTLA        Team Id:8       No. of Matches Won:     2
+FEROZ SHAH KOTLA        Team Id:9       No. of Matches Won:     1
+GREEN PARK      Team Id:13      No. of Matches Won:     2
+HIMACHAL PRADESH CRICKET ASSOCIATION STADIUM    Team Id:3       No. of Matches Won:     1
+HIMACHAL PRADESH CRICKET ASSOCIATION STADIUM    Team Id:4       No. of Matches Won:     5
+HIMACHAL PRADESH CRICKET ASSOCIATION STADIUM    Team Id:6       No. of Matches Won:     1
+HIMACHAL PRADESH CRICKET ASSOCIATION STADIUM    Team Id:8       No. of Matches Won:     2
+HOLKAR CRICKET STADIUM  Team Id:4       No. of Matches Won:     1
+HOLKAR CRICKET STADIUM  Team Id:9       No. of Matches Won:     1
+JSCA INTERNATIONAL STADIUM COMPLEX      Team Id:1       No. of Matches Won:     1
+JSCA INTERNATIONAL STADIUM COMPLEX      Team Id:10      No. of Matches Won:     1
+JSCA INTERNATIONAL STADIUM COMPLEX      Team Id:11      No. of Matches Won:     1
+JSCA INTERNATIONAL STADIUM COMPLEX      Team Id:2       No. of Matches Won:     1
+JSCA INTERNATIONAL STADIUM COMPLEX      Team Id:3       No. of Matches Won:     3
+KINGSMEAD       Team Id:1       No. of Matches Won:     2
+KINGSMEAD       Team Id:2       No. of Matches Won:     3
+KINGSMEAD       Team Id:3       No. of Matches Won:     1
+KINGSMEAD       Team Id:4       No. of Matches Won:     2
+KINGSMEAD       Team Id:5       No. of Matches Won:     2
+KINGSMEAD       Team Id:6       No. of Matches Won:     3
+KINGSMEAD       Team Id:8       No. of Matches Won:     2
+M CHINNASWAMY STADIUM   Team Id:        No. of Matches Won:     2
+M CHINNASWAMY STADIUM   Team Id:1       No. of Matches Won:     4
+M CHINNASWAMY STADIUM   Team Id:11      No. of Matches Won:     2
+M CHINNASWAMY STADIUM   Team Id:2       No. of Matches Won:     29
+M CHINNASWAMY STADIUM   Team Id:3       No. of Matches Won:     4
+M CHINNASWAMY STADIUM   Team Id:4       No. of Matches Won:     4
+M CHINNASWAMY STADIUM   Team Id:5       No. of Matches Won:     3
+M CHINNASWAMY STADIUM   Team Id:6       No. of Matches Won:     3
+M CHINNASWAMY STADIUM   Team Id:7       No. of Matches Won:     6
+M CHINNASWAMY STADIUM   Team Id:8       No. of Matches Won:     1
+MAHARASHTRA CRICKET ASSOCIATION STADIUM Team Id:1       No. of Matches Won:     2
+MAHARASHTRA CRICKET ASSOCIATION STADIUM Team Id:13      No. of Matches Won:     1
+MAHARASHTRA CRICKET ASSOCIATION STADIUM Team Id:2       No. of Matches Won:     2
+MAHARASHTRA CRICKET ASSOCIATION STADIUM Team Id:5       No. of Matches Won:     1
+MAHARASHTRA CRICKET ASSOCIATION STADIUM Team Id:6       No. of Matches Won:     1
+MAHARASHTRA CRICKET ASSOCIATION STADIUM Team Id:7       No. of Matches Won:     1
+NEHRU STADIUM   Team Id:2       No. of Matches Won:     1
+NEHRU STADIUM   Team Id:6       No. of Matches Won:     1
+NEHRU STADIUM   Team Id:8       No. of Matches Won:     1
+NEHRU STADIUM   Team Id:9       No. of Matches Won:     2
+NEW WANDERERS STADIUM   Team Id:2       No. of Matches Won:     3
+NEW WANDERERS STADIUM   Team Id:3       No. of Matches Won:     1
+NEW WANDERERS STADIUM   Team Id:4       No. of Matches Won:     1
+NEW WANDERERS STADIUM   Team Id:6       No. of Matches Won:     1
+NEW WANDERERS STADIUM   Team Id:8       No. of Matches Won:     2
+NEWLANDS        Team Id:2       No. of Matches Won:     1
+NEWLANDS        Team Id:4       No. of Matches Won:     1
+NEWLANDS        Team Id:5       No. of Matches Won:     1
+NEWLANDS        Team Id:6       No. of Matches Won:     1
+NEWLANDS        Team Id:7       No. of Matches Won:     1
+NEWLANDS        Team Id:8       No. of Matches Won:     2
+OUTSURANCE OVAL Team Id:4       No. of Matches Won:     1
+OUTSURANCE OVAL Team Id:6       No. of Matches Won:     1
+SAURASHTRA CRICKET ASSOCIATION STADIUM  Team Id:11      No. of Matches Won:     1
+SAURASHTRA CRICKET ASSOCIATION STADIUM  Team Id:13      No. of Matches Won:     2
+SAURASHTRA CRICKET ASSOCIATION STADIUM  Team Id:4       No. of Matches Won:     1
+SAURASHTRA CRICKET ASSOCIATION STADIUM  Team Id:6       No. of Matches Won:     1
+SAWAI MANSINGH STADIUM  Team Id:1       No. of Matches Won:     1
+SAWAI MANSINGH STADIUM  Team Id:2       No. of Matches Won:     3
+SAWAI MANSINGH STADIUM  Team Id:3       No. of Matches Won:     2
+SAWAI MANSINGH STADIUM  Team Id:5       No. of Matches Won:     24
+SAWAI MANSINGH STADIUM  Team Id:6       No. of Matches Won:     1
+SAWAI MANSINGH STADIUM  Team Id:7       No. of Matches Won:     2
+SHAHEED VEER NARAYAN SINGH INTERNATIONAL STADIUM        Team Id:11      No. of Matches Won:     1
+SHAHEED VEER NARAYAN SINGH INTERNATIONAL STADIUM        Team Id:2       No. of Matches Won:     1
+SHAHEED VEER NARAYAN SINGH INTERNATIONAL STADIUM        Team Id:6       No. of Matches Won:     4
+SHARJAH CRICKET STADIUM Team Id:1       No. of Matches Won:     1
+SHARJAH CRICKET STADIUM Team Id:2       No. of Matches Won:     1
+SHARJAH CRICKET STADIUM Team Id:3       No. of Matches Won:     1
+SHARJAH CRICKET STADIUM Team Id:4       No. of Matches Won:     2
+SHARJAH CRICKET STADIUM Team Id:6       No. of Matches Won:     1
+SHEIKH ZAYED STADIUM    Team Id:1       No. of Matches Won:     1
+SHEIKH ZAYED STADIUM    Team Id:3       No. of Matches Won:     1
+SHEIKH ZAYED STADIUM    Team Id:4       No. of Matches Won:     2
+SHEIKH ZAYED STADIUM    Team Id:5       No. of Matches Won:     3
+ST GEORGE'S PARK        Team Id:3       No. of Matches Won:     2
+ST GEORGE'S PARK        Team Id:4       No. of Matches Won:     1
+ST GEORGE'S PARK        Team Id:5       No. of Matches Won:     1
+ST GEORGE'S PARK        Team Id:6       No. of Matches Won:     1
+ST GEORGE'S PARK        Team Id:7       No. of Matches Won:     2
+SUBRATA ROY SAHARA STADIUM      Team Id:1       No. of Matches Won:     3
+SUBRATA ROY SAHARA STADIUM      Team Id:10      No. of Matches Won:     4
+SUBRATA ROY SAHARA STADIUM      Team Id:11      No. of Matches Won:     1
+SUBRATA ROY SAHARA STADIUM      Team Id:2       No. of Matches Won:     2
+SUBRATA ROY SAHARA STADIUM      Team Id:3       No. of Matches Won:     1
+SUBRATA ROY SAHARA STADIUM      Team Id:4       No. of Matches Won:     1
+SUBRATA ROY SAHARA STADIUM      Team Id:5       No. of Matches Won:     1
+SUBRATA ROY SAHARA STADIUM      Team Id:6       No. of Matches Won:     1
+SUBRATA ROY SAHARA STADIUM      Team Id:7       No. of Matches Won:     2
+SUBRATA ROY SAHARA STADIUM      Team Id:8       No. of Matches Won:     1
+SUPERSPORT PARK Team Id:1       No. of Matches Won:     1
+SUPERSPORT PARK Team Id:2       No. of Matches Won:     2
+SUPERSPORT PARK Team Id:3       No. of Matches Won:     2
+SUPERSPORT PARK Team Id:5       No. of Matches Won:     2
+SUPERSPORT PARK Team Id:6       No. of Matches Won:     2
+SUPERSPORT PARK Team Id:7       No. of Matches Won:     1
+SUPERSPORT PARK Team Id:8       No. of Matches Won:     2
+WANKHEDE STADIUM        Team Id:1       No. of Matches Won:     1
+WANKHEDE STADIUM        Team Id:10      No. of Matches Won:     1
+WANKHEDE STADIUM        Team Id:12      No. of Matches Won:     1
+WANKHEDE STADIUM        Team Id:13      No. of Matches Won:     1
+WANKHEDE STADIUM        Team Id:2       No. of Matches Won:     3
+WANKHEDE STADIUM        Team Id:3       No. of Matches Won:     4
+WANKHEDE STADIUM        Team Id:4       No. of Matches Won:     4
+WANKHEDE STADIUM        Team Id:5       No. of Matches Won:     2
+WANKHEDE STADIUM        Team Id:6       No. of Matches Won:     1
+WANKHEDE STADIUM        Team Id:7       No. of Matches Won:     29
+WANKHEDE STADIUM        Team Id:8       No. of Matches Won:     1
+WANKHEDE STADIUM        Team Id:9       No. of Matches Won:     1
