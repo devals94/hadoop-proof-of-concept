@@ -1,5 +1,0 @@
-//The total count from the menu.
-//command:
-select count(*) from menu;
-
-//Hive:Execution
