@@ -1,0 +1,38 @@
+//2.	The max calories of different categories.
+//Command: select category, max (calories) from menu GROUP BY category;
+
+//Hive Execution:
+hive (mcdonalds)> select category, max (calories) from menu GROUP BY category;
+Query ID = notroot_20170606074637_94639178-4fda-426c-9948-1de36c82fff4
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks not specified. Estimated from input data size: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1496730421688_0013, Tracking URL = http://ubuntu:8088/proxy/a                                                                                        pplication_1496730421688_0013/
+Kill Command = /home/notroot/lab/software/hadoop-2.7.2/bin/hadoop job  -kill job                                                                                        _1496730421688_0013
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2017-06-06 07:46:50,456 Stage-1 map = 0%,  reduce = 0%
+2017-06-06 07:47:08,989 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 6.04 se                                                                                        c
+2017-06-06 07:47:18,142 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 7.53                                                                                         sec
+MapReduce Total cumulative CPU time: 7 seconds 530 msec
+Ended Job = job_1496730421688_0013
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 7.53 sec   HDFS Read: 37603 H                                                                                        DFS Write: 148 SUCCESS
+Total MapReduce CPU Time Spent: 7 seconds 530 msec
+OK
+category        c1
+Beef & Pork     750
+Beverages       280
+Breakfast       1150
+Chicken & Fish  1880
+Coffee & Tea    760
+Desserts        340
+Salads  450
+Smoothies & Shakes      930
+Snacks & Sides  510
+Time taken: 42.992 seconds, Fetched: 9 row(s)
