@@ -1,7 +1,14 @@
 //7.	To Partition the menu according to Category (Example: Category = Breakfast, Category = Beverages, Category = Deserts).
-//Partition Table Command: create table menuByItem ( item STRING, calories INT, calories_from_fat INT,total_fat INT, total_fat_dv INT, saturated_fat INT, trans_fat INT, cholestrol INT, cholestrol_dv INT, sodium INT, sodium_dv INT, carbohydrates INT, carbohydrates_dv INT, dietary_fiber INT, dietary_fiber_dv INT, sugars INT, protein INT, vitamin_a_dv INT, vitamin_c_dv INT, calcium_dv INT, iron_dv INT ) partitioned by ( category STRING ) clustered by ( item ) INTO 10 buckets row format delimited fields terminated by ',' stored as textfile;
+//Partition Table Command: create table menuByItem ( item STRING, calories INT, calories_from_fat INT,total_fat INT, 
+total_fat_dv INT, saturated_fat INT, trans_fat INT, cholestrol INT, cholestrol_dv INT, sodium INT, sodium_dv INT, 
+carbohydrates INT, carbohydrates_dv INT, dietary_fiber INT, dietary_fiber_dv INT, sugars INT, protein INT, 
+vitamin_a_dv INT, vitamin_c_dv INT, calcium_dv INT, iron_dv INT ) partitioned by ( category STRING ) clustered by ( item ) INTO 10 buckets row format delimited fields terminated by ',' stored as textfile;
 
-//Load Partition Table Command: FROM menu mn INSERT OVERWRITE TABLE menuByCat PARTITION (category) SELECT mn.item, mn.calories, mn.calories_from_fat, mn.total_fat, mn.total_fat_dv, mn.saturated_fat, mn.saturated_fat_dv, mn.trans_fat, mn.cholestrol, mn.cholestrol_dv, mn.sodium, mn.sodium_dv, mn.carbohydrates, mn.dietary_fiber, mn.dietary_fiber_dv, mn.sugars, mn.protein, mn.vitamin_a_dv, mn.vitamin_c_dv, mn.calcium_dv, mn.iron_dv, mn.category DISTRIBUTE BY category;
+//Load Partition Table Command: FROM menu mn INSERT OVERWRITE TABLE menuByCat PARTITION (category) SELECT mn.item, 
+mn.calories, mn.calories_from_fat, mn.total_fat, mn.total_fat_dv, mn.saturated_fat, mn.saturated_fat_dv, 
+mn.trans_fat, mn.cholestrol, mn.cholestrol_dv, mn.sodium, mn.sodium_dv, mn.carbohydrates, mn.dietary_fiber, 
+mn.dietary_fiber_dv, mn.sugars, mn.protein, mn.vitamin_a_dv, mn.vitamin_c_dv, mn.calcium_dv, mn.iron_dv, 
+mn.category DISTRIBUTE BY category;
 
 //Hive: Execution
 hive (mcdonalds)> show partitions menuByCat;
