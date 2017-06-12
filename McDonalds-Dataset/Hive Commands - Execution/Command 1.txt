@@ -1,0 +1,30 @@
+//1.	The total count from the menu.
+//Command: select count(*)from menu;
+
+//Hive: Execution
+hive (mcdonalds)> select count (*)from menu;
+Query ID = notroot_20170606073602_6ea5617d-2e18-4d01-8a8f-a7f6470a91d2
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+ set mapreduce.job.reduces=<number>
+Starting Job = job_1496730421688_0012, Tracking URL = http://ubuntu:8088/proxy/a                                                                                        pplication_1496730421688_0012/
+Kill Command = /home/notroot/lab/software/hadoop-2.7.2/bin/hadoop job  -kill job                                                                                        _1496730421688_0012
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2017-06-06 07:36:21,119 Stage-1 map = 0%,  reduce = 0%
+2017-06-06 07:36:34,931 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 5.76 sec
+2017-06-06 07:36:46,812 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 7.48sec
+MapReduce Total cumulative CPU time: 7 seconds 480 msec
+Ended Job = job_1496730421688_0012
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 7.48 sec   HDFS Read: 37006 H                                                                                        DFS Write: 4 SUCCESS
+Total MapReduce CPU Time Spent: 7 seconds 480 msec
+OK
+c0
+260
+Time taken: 44.197 seconds, Fetched: 1 row(s)
