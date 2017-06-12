@@ -1,0 +1,39 @@
+//5.	The top 10 items with highest proteins.
+//Command: select item, protein from menu ORDER BY protein DESC LIMIT 10;
+
+//Hive: Execution
+hive (mcdonalds)> select item, protein from menu ORDER BY protein DESC LIMIT 10;
+Query ID = notroot_20170606081348_acde85e3-11a8-46f8-921d-c4cc0836ddfd
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1496730421688_0016, Tracking URL = http://ubuntu:8088/proxy/application_1496730421688_0016/
+Kill Command = /home/notroot/lab/software/hadoop-2.7.2/bin/hadoop job  -kill job_1496730421688_0016
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2017-06-06 08:14:02,762 Stage-1 map = 0%,  reduce = 0%
+2017-06-06 08:14:10,643 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.22 sec
+2017-06-06 08:14:19,613 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 2.58 sec
+MapReduce Total cumulative CPU time: 2 seconds 580 msec
+Ended Job = job_1496730421688_0016
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 2.58 sec   HDFS Read: 35851 HDFS Write: 380 SUCCESS
+Total MapReduce CPU Time Spent: 2 seconds 580 msec
+OK
+item    protein
+Chicken McNuggets 40 piece      87
+Double Quarter Pounder with Cheese      48
+Chicken McNuggets 20 piece      44
+Premium Grilled Chicken Club Sandwich   40
+Bacon Clubhouse Grilled Chicken Sandwich        40
+Bacon Clubhouse Burger  39
+Quarter Pounder with Bacon & Cheese     37
+Quarter Pounder with Bacon Habanero Ranch       37
+Big Breakfast with Hotcakes Regular Biscuit     36
+Premium Crispy Chicken Club Sandwich    36
+Time taken: 32.147 seconds, Fetched: 10 row(s)

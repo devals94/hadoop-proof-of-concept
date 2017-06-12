@@ -1,0 +1,30 @@
+//7.	To Partition the menu according to Category (Example: Category = Breakfast, Category = Beverages, Category = Deserts).
+//Partition Table Command: create table menuByItem ( item STRING, calories INT, calories_from_fat INT,total_fat INT, total_fat_dv INT, saturated_fat INT, trans_fat INT, cholestrol INT, cholestrol_dv INT, sodium INT, sodium_dv INT, carbohydrates INT, carbohydrates_dv INT, dietary_fiber INT, dietary_fiber_dv INT, sugars INT, protein INT, vitamin_a_dv INT, vitamin_c_dv INT, calcium_dv INT, iron_dv INT ) partitioned by ( category STRING ) clustered by ( item ) INTO 10 buckets row format delimited fields terminated by ',' stored as textfile;
+
+//Load Partition Table Command: FROM menu mn INSERT OVERWRITE TABLE menuByCat PARTITION (category) SELECT mn.item, mn.calories, mn.calories_from_fat, mn.total_fat, mn.total_fat_dv, mn.saturated_fat, mn.saturated_fat_dv, mn.trans_fat, mn.cholestrol, mn.cholestrol_dv, mn.sodium, mn.sodium_dv, mn.carbohydrates, mn.dietary_fiber, mn.dietary_fiber_dv, mn.sugars, mn.protein, mn.vitamin_a_dv, mn.vitamin_c_dv, mn.calcium_dv, mn.iron_dv, mn.category DISTRIBUTE BY category;
+
+//Hive: Execution
+hive (mcdonalds)> show partitions menuByCat;
+OK	
+partition
+category=Beef & Pork
+category=Beverages
+category=Breakfast
+category=Chicken & Fish
+category=Coffee & Tea
+category=Desserts
+category=Salads
+category=Smoothies & Shakes
+category=Snacks & Sides
+Time taken: 1.004 seconds, Fetched: 9 row(s)
+
+
+hive (mcdonalds)> select * from menuByCat where category = 'Breakfast' LIMIT 5;
+OK
+menubycat.item  menubycat.calories      menubycat.calories_from_fat     menubycat.total_fat     menubycat.total_fat_dv  menubycat.saturated_fat menubycat.trans_fat    menubycat.cholestrol     menubycat.cholestrol_dv menubycat.sodium        menubycat.sodium_dv     menubycat.carbohydrates menubycat.carbohydrates_dv      menubycat.dietary_fiber menubycat.dietary_fiber_dv      menubycat.sugars        menubycat.protein       menubycat.vitamin_a_dv  menubycat.vitamin_c_dv  menubycat.calcium_dv    menubycat.iron_dv       menubycat.category
+Big Breakfast with Egg Whites Large Biscuit     690     370     41      63      14      72      0       35      12      1700    71      55      4       17      4      26       4       2       10      15      Breakfast
+Sausage Burrito 300     150     16      25      7       33      0       115     38      790     33      26      1       5       2       12      10      2       15     15       Breakfast
+Cinnamon Melts  460     170     19      30      9       43      0       15      5       370     15      66      3       11      32      6       4       0       6      15       Breakfast
+Fruit & Maple Oatmeal   290     35      4       6       1       8       0       5       2       160     7       58      5       19      32      5       2       130    10       10      Breakfast
+Sausage McMuffin        370     200     23      35      8       42      0       45      15      780     33      29      4       17      2       14      8       0      25       10      Breakfast
+Time taken: 0.785 seconds, Fetched: 5 row(s)

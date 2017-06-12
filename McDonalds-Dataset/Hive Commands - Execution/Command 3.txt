@@ -1,0 +1,39 @@
+//3.	The top 10 items with highest calories.
+//Command: select item, calories from menu ORDER BY calories DESC LIMIT 10;
+
+//Hive: Execution
+hive (mcdonalds)> select item, calories from menu ORDER BY calories DESC LIMIT 10;
+Query ID = notroot_20170606080627_20521261-bf81-4c4e-bafd-2482b84020c7
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1496730421688_0014, Tracking URL = http://ubuntu:8088/proxy/application_1496730421688_0014/
+Kill Command = /home/notroot/lab/software/hadoop-2.7.2/bin/hadoop job  -kill job_1496730421688_0014
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2017-06-06 08:06:41,138 Stage-1 map = 0%,  reduce = 0%
+2017-06-06 08:06:48,868 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.32 sec
+2017-06-06 08:06:59,154 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 2.65 sec
+MapReduce Total cumulative CPU time: 2 seconds 650 msec
+Ended Job = job_1496730421688_0014
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 2.65 sec   HDFS Read: 35853 HDFS Write: 400 SUCCESS
+Total MapReduce CPU Time Spent: 2 seconds 650 msec
+OK
+item    calories
+Chicken McNuggets 40 piece      1880
+Big Breakfast with Hotcakes Large Biscuit       1150
+Big Breakfast with Hotcakes Regular Biscuit     1090
+Big Breakfast with Hotcakes and Egg Whites Large Biscuit        1050
+Big Breakfast with Hotcakes and Egg Whites Regular Biscuit      990
+Chicken McNuggets 20 piece      940
+McFlurry with M&Ms Candies Medium       930
+Chocolate Shake Large   850
+Strawberry Shake Large  850
+Shamrock Shake Large    820
+Time taken: 33.09 seconds, Fetched: 10 row(s)

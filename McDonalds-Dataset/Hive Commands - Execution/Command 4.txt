@@ -1,0 +1,39 @@
+//4.	The top 10 items with highest sugars.
+//Command: select item, sugars from menu ORDER BY sugars DESC LIMIT 10;
+
+//Hive: Execution
+hive (mcdonalds)> select item, sugars from menu ORDER BY sugars DESC LIMIT 10;
+Query ID = notroot_20170606081143_85337740-4e2a-4def-a6ec-057fda85af09
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1496730421688_0015, Tracking URL = http://ubuntu:8088/proxy/application_1496730421688_0015/
+Kill Command = /home/notroot/lab/software/hadoop-2.7.2/bin/hadoop job  -kill job_1496730421688_0015
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2017-06-06 08:11:56,312 Stage-1 map = 0%,  reduce = 0%
+2017-06-06 08:12:05,347 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 1.22 sec
+2017-06-06 08:12:15,557 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 2.64 sec
+MapReduce Total cumulative CPU time: 2 seconds 640 msec
+Ended Job = job_1496730421688_0015
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 2.64 sec   HDFS Read: 35849 HDFS Write: 304 SUCCESS
+Total MapReduce CPU Time Spent: 2 seconds 640 msec
+OK
+item    sugars
+McFlurry with M&Ms Candies Medium       128
+Strawberry Shake Large  123
+Chocolate Shake Large   120
+Shamrock Shake Large    115
+McFlurry with Reeses Peanut Butter Cups Medium  103
+Vanilla Shake Large     101
+Strawberry Shake Medium 100
+FrappÃ© Chocolate Chip Large    99
+Chocolate Shake Medium  97
+Shamrock Shake Medium   93
+Time taken: 33.882 seconds, Fetched: 10 row(s)

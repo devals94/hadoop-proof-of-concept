@@ -1,0 +1,41 @@
+//8.	To pick any value from bucket after partitioning.
+//Command: select category, item, calories from menuByCat TABLESAMPLE (BUCKET 3 OUT OF 10);
+
+//Hive: Execution
+hive (mcdonalds)> select category, item, calories from menuByCat TABLESAMPLE (BUCKET 3 OUT OF 10);
+OK
+category        item    calories
+Beef & Pork     Quarter Pounder with Cheese     520
+Beef & Pork     Quarter Pounder Deluxe  540
+Beverages       Sprite Medium   200
+Beverages       1% Low Fat Milk Jug     100
+Beverages       Minute Maid Orange Juice Small  150
+Breakfast       Egg McMuffin    300
+Breakfast       Bacon Egg & Cheese Biscuit Large Biscuit        520
+Breakfast       Bacon Egg & Cheese McGriddles with Egg Whites   400
+Chicken & Fish  Chicken McNuggets 4 piece       190
+Coffee & Tea    Caramel Latte Medium    340
+Coffee & Tea    Caramel Latte Large     430
+Coffee & Tea    Hazelnut Latte Small    270
+Coffee & Tea    Nonfat Caramel Latte Small      200
+Coffee & Tea    Nonfat Caramel Latte Medium     250
+Coffee & Tea    Mocha with Nonfat Milk Medium   330
+Coffee & Tea    Caramel Mocha Large     480
+Coffee & Tea    Nonfat Caramel Mocha Small      250
+Coffee & Tea    Regular Iced Coffee Small       140
+Coffee & Tea    Regular Iced Coffee Medium      190
+Coffee & Tea    Iced Mocha Medium       350
+Coffee & Tea    FrappÃ© Mocha Large     670
+Coffee & Tea    FrappÃ© Chocolate Chip Medium   630
+Coffee & Tea    FrappÃ© Chocolate Chip Large    760
+Salads  Premium Bacon Ranch Salad with Crispy Chicken   380
+Smoothies & Shakes      Blueberry Pomegranate Smoothie Medium   260
+Smoothies & Shakes      Blueberry Pomegranate Smoothie Large    340
+Smoothies & Shakes      Vanilla Shake Medium    660
+Smoothies & Shakes      Strawberry Shake Small  550
+Snacks & Sides  Chipotle BBQ Snack Wrap Crispy Chicken  340
+Snacks & Sides  Honey Mustard Snack Wrap Crispy Chicken 330
+Snacks & Sides  Ranch Snack Wrap Grilled Chicken        280
+Snacks & Sides  Large French Fries      510
+Snacks & Sides  Side Salad      20
+Time taken: 1.408 seconds, Fetched: 33 row(s)

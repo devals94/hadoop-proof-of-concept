@@ -1,0 +1,40 @@
+//6.	The top 10 categories-items with highest Vitamin A & Vitamin C.
+//Command: select category, item, vitamin_a_dv, vitamin_c_dv from menu ORDER BY vitamin_a_dv DESC, vitamin_c_dv DESC LIMIT 10;
+
+//Hive: Execution
+hive (mcdonalds)> select category, item, vitamin_a_dv, vitamin_c_dv from menu ORDER BY vitamin_a_dv DESC, vitamin_c_dv DESC LIMIT 10;
+Query ID = notroot_20170606092406_98d8529e-4e5a-4af0-a70b-ae780d4debd6
+Total jobs = 1
+Launching Job 1 out of 1
+Number of reduce tasks determined at compile time: 1
+In order to change the average load for a reducer (in bytes):
+  set hive.exec.reducers.bytes.per.reducer=<number>
+In order to limit the maximum number of reducers:
+  set hive.exec.reducers.max=<number>
+In order to set a constant number of reducers:
+  set mapreduce.job.reduces=<number>
+Starting Job = job_1496730421688_0017, Tracking URL = http://ubuntu:8088/proxy/application_1496730421688_0017/
+Kill Command = /home/notroot/lab/software/hadoop-2.7.2/bin/hadoop job  -kill job_1496730421688_0017
+Hadoop job information for Stage-1: number of mappers: 1; number of reducers: 1
+2017-06-06 09:24:29,714 Stage-1 map = 0%,  reduce = 0%
+2017-06-06 09:24:44,431 Stage-1 map = 100%,  reduce = 0%, Cumulative CPU 4.06 sec
+2017-06-06 09:24:54,691 Stage-1 map = 100%,  reduce = 100%, Cumulative CPU 5.5 sec
+MapReduce Total cumulative CPU time: 5 seconds 500 msec
+Ended Job = job_1496730421688_0017
+MapReduce Jobs Launched:
+Stage-Stage-1: Map: 1  Reduce: 1   Cumulative CPU: 5.5 sec   HDFS Read: 36616 HDFS Write: 624 SUCCESS
+Total MapReduce CPU Time Spent: 5 seconds 500 msec
+OK
+category        item    vitamin_a_dv    vitamin_c_dv
+Salads  Premium Southwest Salad with Crispy Chicken     170     30
+Salads  Premium Southwest Salad with Grilled Chicken    170     30
+Salads  Premium Bacon Ranch Salad without Chicken       170     30
+Salads  Premium Southwest Salad without Chicken 160     25
+Salads  Premium Bacon Ranch Salad with Grilled Chicken  110     30
+Salads  Premium Bacon Ranch Salad with Crispy Chicken   100     25
+Chicken & Fish  Premium McWrap Southwest Chicken Grilled Chicken        70      15
+Chicken & Fish  Premium McWrap Chicken & Bacon Grilled Chicken  60      25
+Chicken & Fish  Premium McWrap Chicken & Bacon Crispy Chicken   60      20
+Chicken & Fish  Premium McWrap Chicken Sweet Chili Crispy Chicken       60      15
+Time taken: 49.857 seconds, Fetched: 10 row(s)
+
