@@ -1,0 +1,53 @@
+create database mcdonalds;
+use mcdonalds;
+create table menu ( category STRING, item STRING, calories INT, calories_from_fat INT, total_fat INT, total_fat_dv INT, saturated_fat INT, saturated_fat_dv INT, trans_fat INT, cholestrol INT, cholestrol_dv INT, sodium INT, sodium_dv INT, carbohydrates INT, carbohydrates_dv INT, dietary_fiber INT, dietary_fiber_dv INT, sugars INT, protein INT, vitamin_a_dv INT, vitamin_c_dv INT, calcium_dv INT, iron_dv INT ) 
+row format delimited fields terminated by ',' stored as textfile; 
+LOAD DATA LOCAL INPATH  ‘/home/notroot/lab/data/menu’ OVERWRTIE INTO TABLE menu;
+
+Hive Execution:
+notroot@ubuntu:~$ hive
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/home/notroot/lab/software/apache-hive-2.0.1-b                                                                                        in/lib/log4j-slf4j-impl-2.4.1.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/home/notroot/lab/software/hadoop-2.7.2/share/                                                                                        hadoop/common/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.cl                                                                                        ass]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+
+Logging initialized using configuration in jar:file:/home/notroot/lab/software/a                                                                                        pache-hive-2.0.1-bin/lib/hive-common-2.0.1.jar!/hive-log4j2.properties
+Hive-on-MR is deprecated in Hive 2 and may not be available in the future versio                                                                                        ns. Consider using a different execution engine (i.e. tez, spark) or using Hive                                                                                         1.X releases.
+hive (default)> SET hive.execution.engine=MR;
+hive (default)> use mcdonalds;
+OK
+Time taken: 3.008 seconds
+hive (mcdonalds)> show tables;
+OK
+tab_name
+menu
+menubycat
+Time taken: 0.998 seconds, Fetched: 2 row(s)
+hive (mcdonalds)> describe menu;
+OK
+col_name        data_type       comment
+category                string
+item                    string
+calories                int
+calories_from_fat       int
+total_fat               int
+total_fat_dv            int
+saturated_fat           int
+saturated_fat_dv        int
+trans_fat               int
+cholestrol              int
+cholestrol_dv           int
+sodium                  int
+sodium_dv               int
+carbohydrates           int
+carbohydrates_dv        int
+dietary_fiber           int
+dietary_fiber_dv        int
+sugars                  int
+protein                 int
+vitamin_a_dv            int
+vitamin_c_dv            int
+calcium_dv              int
+iron_dv                 int
+Time taken: 1.594 seconds, Fetched: 23 row(s)
