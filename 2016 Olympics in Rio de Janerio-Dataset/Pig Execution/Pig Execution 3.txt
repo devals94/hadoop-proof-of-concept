@@ -1,1 +1,0 @@
-//3.Find total male participants per country and female participants by country.
