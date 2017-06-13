@@ -1,0 +1,4 @@
+//2.Find total male & female participants.
+
+(male,6331)
+(female,5202)
