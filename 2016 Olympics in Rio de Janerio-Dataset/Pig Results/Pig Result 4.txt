@@ -1,0 +1,4 @@
+//4.Find total gold & silver won.
+
+(666)
+(655)
