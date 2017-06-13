@@ -1,0 +1,590 @@
+//3.Find total male participants per country and female participants by country.
+
+2017-06-07 04:09:22,452 [main] INFO  org.apache.hadoop.conf.Configuration.deprecation - fs.default.name is deprecated. Instead, use fs.defaultFS
+2017-06-07 04:09:23,317 [main] INFO  org.apache.pig.tools.pigstats.ScriptState - Pig features used in the script: GROUP_BY
+2017-06-07 04:09:23,445 [main] INFO  org.apache.hadoop.conf.Configuration.deprecation - fs.default.name is deprecated. Instead, use fs.defaultFS
+2017-06-07 04:09:23,451 [main] INFO  org.apache.pig.data.SchemaTupleBackend - Key [pig.schematuple] was not set... will not generate code.
+2017-06-07 04:09:23,455 [main] INFO  org.apache.pig.newplan.logical.optimizer.LogicalPlanOptimizer - {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, ConstantCalculator, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, PartitionFilterOptimizer, PredicatePushdownOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter]}
+2017-06-07 04:09:23,528 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MRCompiler - File concatenation threshold: 100 optimistic? false
+2017-06-07 04:09:23,541 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.CombinerOptimizerUtil - Choosing to move algebraic foreach to combiner
+2017-06-07 04:09:23,598 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer - MR plan size before optimization: 1
+2017-06-07 04:09:23,598 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer - MR plan size after optimization: 1
+2017-06-07 04:09:23,677 [main] INFO  org.apache.hadoop.conf.Configuration.deprecation - fs.default.name is deprecated. Instead, use fs.defaultFS
+2017-06-07 04:09:23,687 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at /0.0.0.0:8032
+2017-06-07 04:09:23,697 [main] INFO  org.apache.pig.tools.pigstats.mapreduce.MRScriptState - Pig script settings are added to the job
+2017-06-07 04:09:23,700 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - mapred.job.reduce.markreset.buffer.percent is not set, set to default 0.3
+2017-06-07 04:09:23,701 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Reduce phase detected, estimating # of required reducers.
+2017-06-07 04:09:23,701 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Using reducer estimator: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.InputSizeReducerEstimator
+2017-06-07 04:09:23,739 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.InputSizeReducerEstimator - BytesPerReducer=1000000000 maxReducers=999 totalInputFileSize=764907
+2017-06-07 04:09:23,739 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Setting Parallelism to 1
+2017-06-07 04:09:23,739 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - This job cannot be converted run in-process
+2017-06-07 04:09:24,056 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/home/notroot/lab/software/pig-0.16.0/pig-0.16.0-core-h2.jar to DistributedCache through /tmp/temp-427685803/tmp-1704260419/pig-0.16.0-core-h2.jar
+2017-06-07 04:09:24,186 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/home/notroot/lab/software/pig-0.16.0/lib/automaton-1.11-8.jar to DistributedCache through /tmp/temp-427685803/tmp-899597742/automaton-1.11-8.jar
+2017-06-07 04:09:24,302 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/home/notroot/lab/software/pig-0.16.0/lib/antlr-runtime-3.4.jar to DistributedCache through /tmp/temp-427685803/tmp-29226571/antlr-runtime-3.4.jar
+2017-06-07 04:09:24,402 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/home/notroot/lab/software/pig-0.16.0/lib/joda-time-2.9.3.jar to DistributedCache through /tmp/temp-427685803/tmp-1042622332/joda-time-2.9.3.jar
+2017-06-07 04:09:24,409 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Setting up single store job
+2017-06-07 04:09:24,412 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Key [pig.schematuple] is false, will not generate code.
+2017-06-07 04:09:24,413 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Starting process to move generated code to distributed cacche
+2017-06-07 04:09:24,413 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Setting key [pig.schematuple.classes] with classes to deserialize []
+2017-06-07 04:09:24,584 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 1 map-reduce job(s) waiting for submission.
+2017-06-07 04:09:24,594 [JobControl] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at /0.0.0.0:8032
+2017-06-07 04:09:24,718 [JobControl] WARN  org.apache.hadoop.mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2017-06-07 04:09:24,809 [JobControl] INFO  org.apache.pig.builtin.PigStorage - Using PigTextInputFormat
+2017-06-07 04:09:24,818 [JobControl] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1
+2017-06-07 04:09:24,818 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1
+2017-06-07 04:09:24,826 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths (combined) to process : 1
+2017-06-07 04:09:25,857 [JobControl] INFO  org.apache.hadoop.mapreduce.JobSubmitter - number of splits:1
+2017-06-07 04:09:26,540 [JobControl] INFO  org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1496562459269_0046
+2017-06-07 04:09:26,592 [JobControl] INFO  org.apache.hadoop.mapred.YARNRunner - Job jar is not present. Not adding any jar to the list of resources.
+2017-06-07 04:09:27,132 [JobControl] INFO  org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1496562459269_0046
+2017-06-07 04:09:27,152 [JobControl] INFO  org.apache.hadoop.mapreduce.Job - The url to track the job: http://ubuntu:8088/proxy/application_1496562459269_0046/
+2017-06-07 04:09:27,152 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - HadoopJobId: job_1496562459269_0046
+2017-06-07 04:09:27,153 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Processing aliases athletes,countbysex,groupbysex
+2017-06-07 04:09:27,153 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - detailed locations: M: athletes[1,11],athletes[-1,-1],countbysex[9,13],groupbysex[8,13] C: countbysex[9,13],groupbysex[8,13] R: countbysex[9,13]
+2017-06-07 04:09:27,211 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 0% complete
+2017-06-07 04:09:27,212 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1496562459269_0046]
+2017-06-07 04:09:59,718 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 50% complete
+2017-06-07 04:09:59,720 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1496562459269_0046]
+2017-06-07 04:10:09,524 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1496562459269_0046]
+2017-06-07 04:10:12,597 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at /0.0.0.0:8032
+2017-06-07 04:10:12,702 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2017-06-07 04:10:13,904 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at /0.0.0.0:8032
+2017-06-07 04:10:14,024 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2017-06-07 04:10:14,462 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at /0.0.0.0:8032
+2017-06-07 04:10:14,478 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2017-06-07 04:10:14,661 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 100% complete
+2017-06-07 04:10:14,664 [main] INFO  org.apache.pig.tools.pigstats.mapreduce.SimplePigStats - Script Statistics:
+
+HadoopVersion   PigVersion      UserId  StartedAt       FinishedAt      Features
+2.7.2   0.16.0  notroot 2017-06-07 04:09:23     2017-06-07 04:10:14     GROUP_BY
+
+Success!
+
+Job Stats (time in seconds):
+JobId   Maps    Reduces MaxMapTime      MinMapTime      AvgMapTime      MedianMapTime   MaxReduceTime   MinReduceTime   AvgReduceTime   MedianReducetime        Alias  Feature  Outputs
+job_1496562459269_0046  1       1       15      15      15      15      9       9       9       9       athletes,countbysex,groupbysex  GROUP_BY,COMBINER       /output/athletes/AthletesByGender,
+
+Input(s):
+Successfully read 11533 records (765270 bytes) from: "/input/athletes"
+
+Output(s):
+Successfully stored 2 records (22 bytes) in: "/output/athletes/AthletesByGender"
+
+Counters:
+Total records written : 2
+Total bytes written : 22
+Spillable Memory Manager spill count : 0
+Total bags proactively spilled: 0
+Total records proactively spilled: 0
+
+Job DAG:
+job_1496562459269_0046
+
+
+2017-06-07 04:10:14,674 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at /0.0.0.0:8032
+2017-06-07 04:10:14,687 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2017-06-07 04:10:14,859 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at /0.0.0.0:8032
+2017-06-07 04:10:14,874 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2017-06-07 04:10:15,036 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at /0.0.0.0:8032
+2017-06-07 04:10:15,049 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2017-06-07 04:10:15,228 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Success!
+2017-06-07 04:10:15,298 [main] INFO  org.apache.hadoop.conf.Configuration.deprecation - fs.default.name is deprecated. Instead, use fs.defaultFS
+2017-06-07 04:10:15,425 [main] INFO  org.apache.pig.tools.pigstats.ScriptState - Pig features used in the script: GROUP_BY
+2017-06-07 04:10:15,520 [main] INFO  org.apache.hadoop.conf.Configuration.deprecation - fs.default.name is deprecated. Instead, use fs.defaultFS
+2017-06-07 04:10:15,523 [main] INFO  org.apache.pig.data.SchemaTupleBackend - Key [pig.schematuple] was not set... will not generate code.
+2017-06-07 04:10:15,524 [main] INFO  org.apache.pig.newplan.logical.optimizer.LogicalPlanOptimizer - {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, ConstantCalculator, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, PartitionFilterOptimizer, PredicatePushdownOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter]}
+2017-06-07 04:10:15,543 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MRCompiler - File concatenation threshold: 100 optimistic? false
+2017-06-07 04:10:15,569 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.CombinerOptimizerUtil - Choosing to move algebraic foreach to combiner
+2017-06-07 04:10:15,578 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer - MR plan size before optimization: 1
+2017-06-07 04:10:15,578 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MultiQueryOptimizer - MR plan size after optimization: 1
+2017-06-07 04:10:15,641 [main] INFO  org.apache.hadoop.conf.Configuration.deprecation - fs.default.name is deprecated. Instead, use fs.defaultFS
+2017-06-07 04:10:15,647 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at /0.0.0.0:8032
+2017-06-07 04:10:15,654 [main] INFO  org.apache.pig.tools.pigstats.mapreduce.MRScriptState - Pig script settings are added to the job
+2017-06-07 04:10:15,658 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - mapred.job.reduce.markreset.buffer.percent is not set, set to default 0.3
+2017-06-07 04:10:15,661 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Reduce phase detected, estimating # of required reducers.
+2017-06-07 04:10:15,662 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Using reducer estimator: org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.InputSizeReducerEstimator
+2017-06-07 04:10:15,691 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.InputSizeReducerEstimator - BytesPerReducer=1000000000 maxReducers=999 totalInputFileSize=764907
+2017-06-07 04:10:15,692 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Setting Parallelism to 1
+2017-06-07 04:10:15,692 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - This job cannot be converted run in-process
+2017-06-07 04:10:15,950 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/home/notroot/lab/software/pig-0.16.0/pig-0.16.0-core-h2.jar to DistributedCache through /tmp/temp-427685803/tmp525108847/pig-0.16.0-core-h2.jar
+2017-06-07 04:10:16,067 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/home/notroot/lab/software/pig-0.16.0/lib/automaton-1.11-8.jar to DistributedCache through /tmp/temp-427685803/tmp517166592/automaton-1.11-8.jar
+2017-06-07 04:10:16,212 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/home/notroot/lab/software/pig-0.16.0/lib/antlr-runtime-3.4.jar to DistributedCache through /tmp/temp-427685803/tmp-1577179671/antlr-runtime-3.4.jar
+2017-06-07 04:10:16,503 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Added jar file:/home/notroot/lab/software/pig-0.16.0/lib/joda-time-2.9.3.jar to DistributedCache through /tmp/temp-427685803/tmp1642611348/joda-time-2.9.3.jar
+2017-06-07 04:10:16,511 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.JobControlCompiler - Setting up single store job
+2017-06-07 04:10:16,515 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Key [pig.schematuple] is false, will not generate code.
+2017-06-07 04:10:16,515 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Starting process to move generated code to distributed cacche
+2017-06-07 04:10:16,515 [main] INFO  org.apache.pig.data.SchemaTupleFrontend - Setting key [pig.schematuple.classes] with classes to deserialize []
+2017-06-07 04:10:16,599 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 1 map-reduce job(s) waiting for submission.
+2017-06-07 04:10:16,611 [JobControl] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at /0.0.0.0:8032
+2017-06-07 04:10:16,688 [JobControl] WARN  org.apache.hadoop.mapreduce.JobResourceUploader - No job jar file set.  User classes may not be found. See Job or Job#setJar(String).
+2017-06-07 04:10:16,783 [JobControl] INFO  org.apache.pig.builtin.PigStorage - Using PigTextInputFormat
+2017-06-07 04:10:16,793 [JobControl] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1
+2017-06-07 04:10:16,795 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1
+2017-06-07 04:10:16,803 [JobControl] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths (combined) to process : 1
+2017-06-07 04:10:16,964 [JobControl] INFO  org.apache.hadoop.mapreduce.JobSubmitter - number of splits:1
+2017-06-07 04:10:17,216 [JobControl] INFO  org.apache.hadoop.mapreduce.JobSubmitter - Submitting tokens for job: job_1496562459269_0047
+2017-06-07 04:10:17,232 [JobControl] INFO  org.apache.hadoop.mapred.YARNRunner - Job jar is not present. Not adding any jar to the list of resources.
+2017-06-07 04:10:17,585 [JobControl] INFO  org.apache.hadoop.yarn.client.api.impl.YarnClientImpl - Submitted application application_1496562459269_0047
+2017-06-07 04:10:17,617 [JobControl] INFO  org.apache.hadoop.mapreduce.Job - The url to track the job: http://ubuntu:8088/proxy/application_1496562459269_0047/
+2017-06-07 04:10:17,618 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - HadoopJobId: job_1496562459269_0047
+2017-06-07 04:10:17,618 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Processing aliases athletes,countbyboth,groupbyboth
+2017-06-07 04:10:17,619 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - detailed locations: M: athletes[1,11],athletes[-1,-1],countbyboth[14,14],groupbyboth[13,14] C: countbyboth[14,14],groupbyboth[13,14] R: countbyboth[14,14]
+2017-06-07 04:10:17,675 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 0% complete
+2017-06-07 04:10:17,679 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1496562459269_0047]
+2017-06-07 04:11:00,237 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 50% complete
+2017-06-07 04:11:00,297 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1496562459269_0047]
+2017-06-07 04:11:14,861 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Running jobs are [job_1496562459269_0047]
+2017-06-07 04:11:20,483 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at /0.0.0.0:8032
+2017-06-07 04:11:20,627 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2017-06-07 04:11:21,247 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at /0.0.0.0:8032
+2017-06-07 04:11:21,314 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2017-06-07 04:11:21,585 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at /0.0.0.0:8032
+2017-06-07 04:11:21,604 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2017-06-07 04:11:21,819 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 100% complete
+2017-06-07 04:11:21,824 [main] INFO  org.apache.pig.tools.pigstats.mapreduce.SimplePigStats - Script Statistics:
+
+HadoopVersion   PigVersion      UserId  StartedAt       FinishedAt      Features
+2.7.2   0.16.0  notroot 2017-06-07 04:10:15     2017-06-07 04:11:21     GROUP_BY
+
+Success!
+
+Job Stats (time in seconds):
+JobId   Maps    Reduces MaxMapTime      MinMapTime      AvgMapTime      MedianMapTime   MaxReduceTime   MinReduceTime   AvgReduceTime   MedianReducetime        Alias  Feature  Outputs
+job_1496562459269_0047  1       1       14      14      14      14      8       8       8       8       athletes,countbyboth,groupbyboth        GROUP_BY,COMBINER      hdfs://localhost:9000/tmp/temp-427685803/tmp-1800988867,
+
+Input(s):
+Successfully read 11533 records (765270 bytes) from: "/input/athletes"
+
+Output(s):
+Successfully stored 408 records (8147 bytes) in: "hdfs://localhost:9000/tmp/temp-427685803/tmp-1800988867"
+
+Counters:
+Total records written : 408
+Total bytes written : 8147
+Spillable Memory Manager spill count : 0
+Total bags proactively spilled: 0
+Total records proactively spilled: 0
+
+Job DAG:
+job_1496562459269_0047
+
+
+2017-06-07 04:11:21,832 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at /0.0.0.0:8032
+2017-06-07 04:11:21,880 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2017-06-07 04:11:22,133 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at /0.0.0.0:8032
+2017-06-07 04:11:22,150 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2017-06-07 04:11:22,345 [main] INFO  org.apache.hadoop.yarn.client.RMProxy - Connecting to ResourceManager at /0.0.0.0:8032
+2017-06-07 04:11:22,414 [main] INFO  org.apache.hadoop.mapred.ClientServiceDelegate - Application state is completed. FinalApplicationStatus=SUCCEEDED. Redirecting to job history server
+2017-06-07 04:11:22,806 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - Success!
+2017-06-07 04:11:22,810 [main] INFO  org.apache.hadoop.conf.Configuration.deprecation - fs.default.name is deprecated. Instead, use fs.defaultFS
+2017-06-07 04:11:22,813 [main] INFO  org.apache.pig.data.SchemaTupleBackend - Key [pig.schematuple] was not set... will not generate code.
+2017-06-07 04:11:22,954 [main] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1
+2017-06-07 04:11:22,954 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1
+(AFG,male,2)
+(AFG,female,1)
+(ALB,male,3)
+(ALB,female,3)
+(ALG,male,58)
+(ALG,female,10)
+(AND,male,2)
+(AND,female,3)
+(ANG,male,8)
+(ANG,female,18)
+(ANT,male,7)
+(ANT,female,2)
+(ARG,male,146)
+(ARG,female,77)
+(ARM,male,24)
+(ARM,female,8)
+(ARU,male,3)
+(ARU,female,4)
+(ASA,male,3)
+(ASA,female,1)
+(AUS,male,211)
+(AUS,female,219)
+(AUT,male,37)
+(AUT,female,34)
+(AZE,male,42)
+(AZE,female,14)
+(BAH,male,17)
+(BAH,female,13)
+(BAN,male,4)
+(BAN,female,3)
+(BAR,male,7)
+(BAR,female,4)
+(BDI,male,5)
+(BDI,female,4)
+(BEL,male,74)
+(BEL,female,34)
+(BEN,male,4)
+(BEN,female,2)
+(BER,male,4)
+(BER,female,4)
+(BHU,female,2)
+(BIH,male,7)
+(BIH,female,4)
+(BIZ,male,2)
+(BIZ,female,1)
+(BLR,male,54)
+(BLR,female,70)
+(BOL,male,6)
+(BOL,female,6)
+(BOT,male,9)
+(BOT,female,3)
+(BRA,male,269)
+(BRA,female,216)
+(BRN,male,20)
+(BRN,female,14)
+(BRU,male,2)
+(BRU,female,1)
+(BUL,male,29)
+(BUL,female,21)
+(BUR,male,3)
+(BUR,female,2)
+(CAF,male,3)
+(CAF,female,3)
+(CAM,male,2)
+(CAM,female,4)
+(CAN,male,130)
+(CAN,female,191)
+(CAY,male,3)
+(CAY,female,2)
+(CGO,male,7)
+(CGO,female,3)
+(CHA,male,1)
+(CHA,female,1)
+(CHI,male,25)
+(CHI,female,17)
+(CHN,male,153)
+(CHN,female,251)
+(CIV,male,5)
+(CIV,female,7)
+(CMR,male,5)
+(CMR,female,19)
+(COD,male,2)
+(COD,female,2)
+(COK,male,4)
+(COK,female,5)
+(COL,male,78)
+(COL,female,75)
+(COM,male,2)
+(COM,female,2)
+(CPV,male,2)
+(CPV,female,3)
+(CRC,male,6)
+(CRC,female,5)
+(CRO,male,69)
+(CRO,female,19)
+(CUB,male,88)
+(CUB,female,35)
+(CYP,male,10)
+(CYP,female,6)
+(CZE,male,62)
+(CZE,female,42)
+(DEN,male,87)
+(DEN,female,41)
+(DJI,male,6)
+(DJI,female,1)
+(DMA,male,1)
+(DMA,female,1)
+(DOM,male,21)
+(DOM,female,8)
+(ECU,male,23)
+(ECU,female,15)
+(EGY,male,85)
+(EGY,female,37)
+(ERI,male,11)
+(ERI,female,1)
+(ESA,male,5)
+(ESA,female,3)
+(ESP,male,167)
+(ESP,female,146)
+(EST,male,28)
+(EST,female,18)
+(ETH,male,18)
+(ETH,female,20)
+(FIJ,male,37)
+(FIJ,female,17)
+(FIN,male,26)
+(FIN,female,28)
+(FRA,male,234)
+(FRA,female,176)
+(FSM,male,2)
+(FSM,female,3)
+(GAB,male,4)
+(GAB,female,2)
+(GAM,male,3)
+(GAM,female,1)
+(GBR,male,205)
+(GBR,female,169)
+(GBS,male,3)
+(GBS,female,2)
+(GEO,male,30)
+(GEO,female,10)
+(GEQ,male,1)
+(GEQ,female,1)
+(GER,male,237)
+(GER,female,203)
+(GHA,male,7)
+(GHA,female,9)
+(GRE,male,56)
+(GRE,female,37)
+(GRN,male,5)
+(GRN,female,2)
+(GUA,male,15)
+(GUA,female,6)
+(GUI,male,2)
+(GUI,female,3)
+(GUM,male,3)
+(GUM,female,2)
+(GUY,male,3)
+(GUY,female,3)
+(HAI,male,7)
+(HAI,female,3)
+(HKG,male,15)
+(HKG,female,23)
+(HON,male,28)
+(HON,female,2)
+(HUN,male,88)
+(HUN,female,66)
+(INA,male,17)
+(INA,female,11)
+(IND,male,67)
+(IND,female,56)
+(IOA,male,8)
+(IOA,female,1)
+(IRI,male,55)
+(IRI,female,9)
+(IRL,male,53)
+(IRL,female,27)
+(IRQ,male,26)
+(ISL,male,3)
+(ISL,female,5)
+(ISR,male,22)
+(ISR,female,25)
+(ISV,male,5)
+(ISV,female,2)
+(ITA,male,168)
+(ITA,female,144)
+(IVB,male,1)
+(IVB,female,3)
+(JAM,male,26)
+(JAM,female,31)
+(JOR,male,7)
+(JOR,female,1)
+(JPN,male,179)
+(JPN,female,167)
+(KAZ,male,55)
+(KAZ,female,48)
+(KEN,male,47)
+(KEN,female,33)
+(KGZ,male,12)
+(KGZ,female,7)
+(KIR,male,2)
+(KIR,female,1)
+(KOR,male,107)
+(KOR,female,106)
+(KOS,male,3)
+(KOS,female,5)
+(KSA,male,7)
+(KSA,female,4)
+(LAO,male,4)
+(LAO,female,2)
+(LAT,male,19)
+(LAT,female,13)
+(LBA,male,6)
+(LBA,female,1)
+(LBR,male,1)
+(LBR,female,1)
+(LCA,male,2)
+(LCA,female,3)
+(LES,male,7)
+(LES,female,1)
+(LIB,male,4)
+(LIB,female,5)
+(LIE,male,1)
+(LIE,female,2)
+(LTU,male,48)
+(LTU,female,19)
+(LUX,male,5)
+(LUX,female,5)
+(MAD,male,2)
+(MAD,female,4)
+(MAR,male,30)
+(MAR,female,19)
+(MAS,male,17)
+(MAS,female,15)
+(MAW,male,2)
+(MAW,female,2)
+(MDA,male,14)
+(MDA,female,9)
+(MDV,male,2)
+(MDV,female,2)
+(MEX,male,82)
+(MEX,female,44)
+(MGL,male,26)
+(MGL,female,17)
+(MHL,male,2)
+(MHL,female,3)
+(MKD,male,2)
+(MKD,female,4)
+(MLI,male,4)
+(MLI,female,2)
+(MLT,male,4)
+(MLT,female,3)
+(MNE,male,17)
+(MNE,female,18)
+(MON,male,3)
+(MOZ,male,5)
+(MOZ,female,1)
+(MRI,male,5)
+(MRI,female,6)
+(MTN,male,1)
+(MTN,female,1)
+(MYA,male,4)
+(MYA,female,3)
+(NAM,male,4)
+(NAM,female,6)
+(NCA,male,3)
+(NCA,female,2)
+(NED,male,110)
+(NED,female,139)
+(NEP,male,3)
+(NEP,female,4)
+(NGR,male,52)
+(NGR,female,26)
+(NIG,male,4)
+(NIG,female,2)
+(NOR,male,29)
+(NOR,female,33)
+(NRU,male,2)
+(NZL,male,103)
+(NZL,female,105)
+(OMA,male,2)
+(OMA,female,2)
+(PAK,male,4)
+(PAK,female,3)
+(PAN,male,4)
+(PAN,female,6)
+(PAR,male,6)
+(PAR,female,5)
+(PER,male,17)
+(PER,female,12)
+(PHI,male,7)
+(PHI,female,6)
+(PLE,male,4)
+(PLE,female,2)
+(PLW,male,3)
+(PLW,female,2)
+(PNG,male,6)
+(PNG,female,2)
+(POL,male,142)
+(POL,female,100)
+(POR,male,66)
+(POR,female,29)
+(PRK,male,11)
+(PRK,female,20)
+(PUR,male,13)
+(PUR,female,27)
+(QAT,male,37)
+(QAT,female,2)
+(ROT,male,6)
+(ROT,female,4)
+(ROU,male,34)
+(ROU,female,64)
+(RSA,male,97)
+(RSA,female,49)
+(RUS,male,144)
+(RUS,female,142)
+(RWA,male,4)
+(RWA,female,3)
+(SAM,male,5)
+(SAM,female,3)
+(SEN,male,6)
+(SEN,female,16)
+(SEY,male,8)
+(SEY,female,2)
+(SIN,male,9)
+(SIN,female,16)
+(SKN,male,6)
+(SKN,female,1)
+(SLE,male,2)
+(SLE,female,2)
+(SLO,male,39)
+(SLO,female,24)
+(SMR,male,3)
+(SMR,female,2)
+(SOL,male,1)
+(SOL,female,2)
+(SOM,male,1)
+(SOM,female,1)
+(SRB,male,58)
+(SRB,female,45)
+(SRI,male,7)
+(SRI,female,2)
+(SSD,male,2)
+(SSD,female,1)
+(STP,male,2)
+(STP,female,1)
+(SUD,male,4)
+(SUD,female,2)
+(SUI,male,58)
+(SUI,female,46)
+(SUR,male,4)
+(SUR,female,2)
+(SVK,male,32)
+(SVK,female,19)
+(SWE,male,73)
+(SWE,female,91)
+(SWZ,male,1)
+(SWZ,female,1)
+(SYR,male,4)
+(SYR,female,3)
+(TAN,male,5)
+(TAN,female,2)
+(TGA,male,4)
+(TGA,female,3)
+(THA,male,26)
+(THA,female,28)
+(TJK,male,5)
+(TJK,female,2)
+(TKM,male,4)
+(TKM,female,5)
+(TLS,male,1)
+(TLS,female,2)
+(TOG,male,2)
+(TOG,female,3)
+(TPE,male,26)
+(TPE,female,30)
+(TTO,male,21)
+(TTO,female,11)
+(TUN,male,41)
+(TUN,female,20)
+(TUR,male,55)
+(TUR,female,48)
+(TUV,male,1)
+(UAE,male,9)
+(UAE,female,4)
+(UGA,male,14)
+(UGA,female,7)
+(UKR,male,87)
+(UKR,female,118)
+(URU,male,12)
+(URU,female,5)
+(USA,male,264)
+(USA,female,303)
+(UZB,male,47)
+(UZB,female,23)
+(VAN,male,4)
+(VEN,male,62)
+(VEN,female,25)
+(VIE,male,10)
+(VIE,female,13)
+(VIN,male,2)
+(VIN,female,2)
+(YEM,male,2)
+(YEM,female,1)
+(ZAM,male,5)
+(ZAM,female,2)
+(ZIM,male,9)
+(ZIM,female,26)
