@@ -1,4 +1,4 @@
-//7.Find number of participants with respect to a particular sport & country.
+//7.Find number of participants with respect to a particular sport & country.(Displaying top 5 countries with highest participants)
 
 (USA,athletics,129)
 (GER,athletics,89)
