@@ -25,4 +25,4 @@ Objective with Hive is to determine:
 7.	To Partition the menu according to Category (Example: Category = Breakfast, Category = Beverages, Category = Deserts).
 8.	To pick any value from Bucket after partitioning.
 
-Pig is shown on 
+Pig is shown on 2016 Olympics in Rio de Janerio Dataset.
