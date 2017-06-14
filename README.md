@@ -24,3 +24,5 @@ Objective with Hive is to determine:
 6.	The top 10 categories-items with highest Vitamin A & Vitamin C.
 7.	To Partition the menu according to Category (Example: Category = Breakfast, Category = Beverages, Category = Deserts).
 8.	To pick any value from Bucket after partitioning.
+
+Pig is shown on 
