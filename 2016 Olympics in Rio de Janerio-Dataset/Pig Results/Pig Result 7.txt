@@ -1,0 +1,7 @@
+//7.Find number of participants with respect to a particular sport & country.
+
+(USA,athletics,129)
+(GER,athletics,89)
+(USA,aquatics,85)
+(AUS,aquatics,83)
+(ITA,aquatics,81)
