@@ -1,0 +1,7 @@
+//6.Find youngest participant.(Displaying 5 youngest participants)
+
+Ana Iulia Dascal        ROU     female  aquatics        13
+Gaurika Singh   NEP     female  aquatics        13
+Siri Arun Budcharern    LAO     female  aquatics        14
+Thint Myaat     MYA     male    aquatics        14
+Fatima Alkaramova       AZE     female  aquatics        14
