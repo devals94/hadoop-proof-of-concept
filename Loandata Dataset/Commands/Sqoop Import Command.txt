@@ -1,0 +1,2 @@
+//Sqoop Import Command
+notroot@ubuntu:~$ sqoop import --connect jdbc:mysql://localhost/loan --driver com.mysql.jdbc.Driver --table LoanRecord -m 1 --username root --password admin -target-dir /output/SqoopLoandata
