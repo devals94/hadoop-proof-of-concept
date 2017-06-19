@@ -40,4 +40,5 @@ Objective with Pig is to determine:
 Sqoop is shown on Loandata Dataset.
 
 Objective with Sqoop is:
-To show export & import commands using sqoop.
+
+1.To show export & import commands using sqoop.
