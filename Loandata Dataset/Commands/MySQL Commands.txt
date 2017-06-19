@@ -1,0 +1,41 @@
+//MySQL Commands
+//Create a table in MySQL
+
+mysql> create database loan;
+Query OK, 1 row affected (0.01 sec)
+mysql> use loan;
+
+mysql> CREATE TABLE LoanRecord(
+    -> KeyID VARCHAR (10) NOT NULL,
+    -> LoanID VARCHAR (20) NOT NULL,
+    -> LoanStatus VARCHAR (20) NOT NULL,
+    -> Principal SMALLINT NOT NULL,
+    -> Terms TINYINT NOT NULL,
+    -> EffectiveDt DATE NOT NULL,
+    -> DueDt DATE NOT NULL,
+    -> PaidOffTime DATETIME NULL,
+    -> PastDues SMALLINT NOT NULL,
+    -> Age TINYINT NOT NULL,
+    -> Education VARCHAR (30) NOT NULL,
+    -> Gender VARCHAR (10) NOT NULL,
+    -> PRIMARY KEY (KeyID));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> describe LoanRecord;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| KeyID       | varchar(10) | NO   | PRI | NULL    |       |
+| LoanID      | varchar(20) | NO   |     | NULL    |       |
+| LoanStatus  | varchar(20) | NO   |     | NULL    |       |
+| Principal   | smallint(6) | NO   |     | NULL    |       |
+| Terms       | tinyint(4)  | NO   |     | NULL    |       |
+| EffectiveDt | date        | NO   |     | NULL    |       |
+| DueDt       | date        | NO   |     | NULL    |       |
+| PaidOffTime | datetime    | YES  |     | NULL    |       |
+| PastDues    | smallint(6) | NO   |     | NULL    |       |
+| Age         | tinyint(4)  | NO   |     | NULL    |       |
+| Education   | varchar(30) | NO   |     | NULL    |       |
+| Gender      | varchar(10) | NO   |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+12 rows in set (0.01 sec)
