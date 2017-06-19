@@ -1,0 +1,2 @@
+//Sqoop Export Command
+notroot@ubuntu:~$ sqoop export --connect jdbc:mysql://localhost/loan --driver com.mysql.jdbc.Driver --table LoanRecord --username root --password admin --export-dir /input/LoanRecord
