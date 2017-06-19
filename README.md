@@ -26,3 +26,18 @@ Objective with Hive is to determine:
 8.	To pick any value from Bucket after partitioning.
 
 Pig is shown on 2016 Olympics in Rio de Janerio Dataset.
+
+Objective with Pig is to determine:
+1.	Find total participants by country.
+2.	Find total male & female participants.
+3.	Find total male participants per country and female participants by country.
+4.	Find total gold & silver won.
+5.	Find oldest participant.
+6.	Find youngest participant.
+7.	Find number of participants with respect to a particular sport & country.
+8.	Find total participants per sport.
+
+Sqoop is shown on Loandata Dataset.
+
+Objective with Sqoop is:
+To show export & import commands using sqoop.
